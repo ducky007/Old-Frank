@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="75" height="75" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="addObjects" value="1"/>
+  <property name="updateTime" value="1"/>
+ </properties>
+ <tileset firstgid="1" name="background2" tilewidth="32" tileheight="32">
+  <image source="background.png" trans="f8fff4" width="320" height="320"/>
+  <tile id="0">
+   <properties>
+    <property name="name" value="lake_1"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="name" value="lake_2"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="name" value="lake_3"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="name" value="grass"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="name" value="grass"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="name" value="rose"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="name" value="lake_4"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="name" value="lake_5"/>
+   </properties>
+  </tile>
+  <tile id="12">
+   <properties>
+    <property name="name" value="lake_6"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="name" value="path_t_top"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="name" value="path_t_right"/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="name" value="lake_7"/>
+   </properties>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="name" value="lake_8"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="name" value="lake_9"/>
+   </properties>
+  </tile>
+  <tile id="23">
+   <properties>
+    <property name="name" value="path_t_left"/>
+   </properties>
+  </tile>
+  <tile id="24">
+   <properties>
+    <property name="name" value="path_t_bottom"/>
+   </properties>
+  </tile>
+  <tile id="30">
+   <properties>
+    <property name="name" value="dirt_1"/>
+   </properties>
+  </tile>
+  <tile id="31">
+   <properties>
+    <property name="name" value="dirt_2"/>
+   </properties>
+  </tile>
+  <tile id="32">
+   <properties>
+    <property name="name" value="dirt_3"/>
+   </properties>
+  </tile>
+  <tile id="33">
+   <properties>
+    <property name="name" value="path_top_left"/>
+   </properties>
+  </tile>
+  <tile id="34">
+   <properties>
+    <property name="name" value="path_top_right"/>
+   </properties>
+  </tile>
+  <tile id="40">
+   <properties>
+    <property name="name" value="dirt_4"/>
+   </properties>
+  </tile>
+  <tile id="41">
+   <properties>
+    <property name="name" value="dirt_5"/>
+   </properties>
+  </tile>
+  <tile id="42">
+   <properties>
+    <property name="name" value="dirt_6"/>
+   </properties>
+  </tile>
+  <tile id="43">
+   <properties>
+    <property name="name" value="path_bottom_left"/>
+   </properties>
+  </tile>
+  <tile id="44">
+   <properties>
+    <property name="name" value="path_bottom_right"/>
+   </properties>
+  </tile>
+  <tile id="50">
+   <properties>
+    <property name="name" value="dirt_7"/>
+   </properties>
+  </tile>
+  <tile id="51">
+   <properties>
+    <property name="name" value="dirt_8"/>
+   </properties>
+  </tile>
+  <tile id="52">
+   <properties>
+    <property name="name" value="dirt_9"/>
+   </properties>
+  </tile>
+  <tile id="53">
+   <properties>
+    <property name="name" value="path_left_right"/>
+   </properties>
+  </tile>
+  <tile id="54">
+   <properties>
+    <property name="name" value="path_top_bottom"/>
+   </properties>
+  </tile>
+  <tile id="57">
+   <properties>
+    <property name="name" value="house_1"/>
+   </properties>
+  </tile>
+  <tile id="58">
+   <properties>
+    <property name="name" value="house_2"/>
+   </properties>
+  </tile>
+  <tile id="63">
+   <properties>
+    <property name="name" value="path_end_left"/>
+   </properties>
+  </tile>
+  <tile id="64">
+   <properties>
+    <property name="name" value="path_end_right"/>
+   </properties>
+  </tile>
+  <tile id="66">
+   <properties>
+    <property name="name" value="house_3"/>
+   </properties>
+  </tile>
+  <tile id="67">
+   <properties>
+    <property name="name" value="house_4"/>
+   </properties>
+  </tile>
+  <tile id="68">
+   <properties>
+    <property name="name" value="house_5"/>
+   </properties>
+  </tile>
+  <tile id="69">
+   <properties>
+    <property name="name" value="house_6"/>
+   </properties>
+  </tile>
+  <tile id="73">
+   <properties>
+    <property name="name" value="path_end_top"/>
+   </properties>
+  </tile>
+  <tile id="74">
+   <properties>
+    <property name="name" value="path_end_bottom"/>
+   </properties>
+  </tile>
+  <tile id="76">
+   <properties>
+    <property name="name" value="house_7"/>
+   </properties>
+  </tile>
+  <tile id="77">
+   <properties>
+    <property name="name" value="house_8"/>
+   </properties>
+  </tile>
+  <tile id="78">
+   <properties>
+    <property name="name" value="house_9"/>
+   </properties>
+  </tile>
+  <tile id="79">
+   <properties>
+    <property name="name" value="house_10"/>
+   </properties>
+  </tile>
+  <tile id="86">
+   <properties>
+    <property name="name" value="house_11"/>
+   </properties>
+  </tile>
+  <tile id="87">
+   <properties>
+    <property name="name" value="house_12"/>
+   </properties>
+  </tile>
+  <tile id="88">
+   <properties>
+    <property name="name" value="house_13"/>
+   </properties>
+  </tile>
+  <tile id="89">
+   <properties>
+    <property name="name" value="house_14"/>
+   </properties>
+  </tile>
+  <tile id="90">
+   <properties>
+    <property name="name" value="farm_plot"/>
+   </properties>
+  </tile>
+  <tile id="96">
+   <properties>
+    <property name="name" value="house_15"/>
+   </properties>
+  </tile>
+  <tile id="97">
+   <properties>
+    <property name="name" value="house_16"/>
+   </properties>
+  </tile>
+  <tile id="98">
+   <properties>
+    <property name="name" value="house_17"/>
+   </properties>
+  </tile>
+  <tile id="99">
+   <properties>
+    <property name="name" value="house_18"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Tile Layer 1" width="75" height="75" opacity="0.87">
+  <data encoding="base64" compression="zlib">
+   eJzt27tOwzAUgOEA3aAwAWKCwgSFCQoSLJW4LIjLxmXj8v7PwAlSRAV27MSNOXb+4VswEvHfJFSxMyiKYgAAc7QtdgKNFMwjhn1xEGisYB600oVWtKIVrVJBK1rRilapoBWtaPW/jsVJoImCecSwK05rrDrGK3sK5tK1s8Dxpr+XMlrRilbdcj0Lp9UP1/+5rcDxypGCuYZ2Sn0OseRwXdBKH1rRila0+m1BLHpYinz8GlstixUPQ1rRilbJtrLtKaPVX7Y1hLKX7VkCrfzXUWiVdqt1seFhk1bf9wvXM7XQZ2K5tIpxXLTyV60PzzZyrfv2tVVldm1cyzFpbZX6MbU5rnNxYRmzfUdv+i5HDq0uxZW4FjeGcdt9vOnenRxa3Yl78SAeaVXrSTyLF/HaopXpu5xpT08Ord7Eu/gQn4Zx2/6xSc3f8v2ZBoeGz7ot176v1FvZNN2POfbovkYr7/u3qYGpb2p7Gdq2Ku/ftmsxtfOl61bleVKdF9Oifp9PLvtau7gGcz3PaEUrWuXf6lbBPOeh6fsufXm3BQAAAACAvvsCJo7OCw==
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="75" height="75">
+  <data encoding="base64" compression="zlib">
+   eJzt2reuwkAURVFCRyiBf4GS0BE6UkX4/2/gSq5HOtjjmbn2XtLpLGFtDFjPbzAAAOT0bLg+oZWOVrrUrSbNTzkbrisdrXS00tFKRysdrXS00tFKR6s42rjH9nzfDgBALPweAkB5+G4G/BnaRsLGuU6wIFPbTNg81wkWhFY6WulopUvZyvtzgVStQs9RPN0/527VtpjvxcK2FLZq+Do8n9OV1qrkz35prUpHI03J17xHXey5tm1yn4QDW9vOtrcdAsfwHV452k62s+0SOIZWlavtZrvbHoFjaFV52d62j+2b+VwQT+rfVf73UkcrHa10tNLRSkcrHa10tNLRCv/q4t/W+iD1++b5OvF87rHQAKiHz45/vIcAgDp+nvqKow==
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1" visible="0">
+  <object x="200.404" y="1039.3" width="334.007" height="259.438"/>
+  <object x="577.803" y="1599.32" width="38.8605" height="31.3807"/>
+  <object x="663.456" y="1598.88" width="33.337" height="31.9623"/>
+  <object x="577.5" y="1535" width="125.303" height="62.9562"/>
+  <object x="578" y="1513.75" width="24" height="22.5"/>
+  <object x="679.75" y="1513" width="19" height="20.75"/>
+  <object x="605" y="1487.75" width="72.75" height="46"/>
+  <object x="628.75" y="1475" width="21.25" height="11.5"/>
+  <object x="617.929" y="1599.65" width="44.3864" height="42.2107">
+   <properties>
+    <property name="loadMap" value="house"/>
+   </properties>
+  </object>
+  <object x="625.326" y="1643.6" width="28.7206" height="26.98">
+   <properties>
+    <property name="playerStart" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

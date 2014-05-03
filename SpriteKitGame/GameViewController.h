@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import "Player.h"
 
-@interface ViewController : UIViewController
+@interface GameViewController : UIViewController
+
+-(void)showInventoryViewForPlayer:(Player *)player;
 
 @end

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="10" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="addObjects" value="0"/>
+  <property name="updateTime" value="0"/>
+ </properties>
+ <tileset firstgid="1" name="house" tilewidth="32" tileheight="32">
+  <image source="house.png" trans="f8fff4" width="320" height="320"/>
+  <tile id="0">
+   <properties>
+    <property name="name" value="house_floor"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="name" value="house_wall_right"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="name" value="house_wall_back"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="name" value="house_wall_left"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="name" value="house_wall_bottom"/>
+   </properties>
+  </tile>
+  <tile id="20">
+   <properties>
+    <property name="name" value="house_wall_end_left"/>
+   </properties>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="name" value="house_wall_end_right"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Tile Layer 1" width="20" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBj8gJFKeNS8kWEeNQEAtUwAfw==
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="20" height="10">
+  <data encoding="base64" compression="zlib">
+   eJzjZmBgYKYSZgJibhqYRy0wat7wN08UiHkIYDGoekJqQeoANVIB7A==
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1">
+  <properties>
+   <property name="playerStart" value="true"/>
+  </properties>
+  <object x="22.6667" y="2.5" width="594.833" height="56.6667"/>
+  <object x="610" y="65.5" width="10" height="233"/>
+  <object x="22.5" y="62.5" width="9.5" height="236.5"/>
+  <object x="34.5" y="290.5" width="263.5" height="9.5"/>
+  <object x="374.5" y="290.5" width="234" height="9"/>
+  <object x="298" y="258" width="72.6667" height="40.6667">
+   <properties>
+    <property name="loadMap" value="farm"/>
+   </properties>
+  </object>
+  <object x="317.333" y="218" width="34.6667" height="38">
+   <properties>
+    <property name="playerStart" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

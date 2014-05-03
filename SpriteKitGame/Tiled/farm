@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="75" height="75" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="background2" tilewidth="32" tileheight="32">
+  <image source="background.png" trans="f8fff4" width="320" height="320"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="75" height="75">
+  <data encoding="base64" compression="zlib">
+   eJzt1b0KwjAUgNEundRRHdXRn63aTX3/tzKLoKVqAjaNeIZD6Xb5CPfWVVXVAAAAAAAAAAAAfM0kmEaYFTDr2ObBIsKygFnHppVWWmn1K7TSagirYB1hU8CsAK9sg12ifQFzj6EJjolOBcw9Vqs2OHS+7cP/nVb9bbqdtPKuUlu92019bytXq9i7k+vWND09PsnVKvbu5JrnHFwSXf+0Vcm00moIsfsh104AAAAAAACe3QDSPpQ7
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="75" height="75">
+  <data encoding="base64" compression="zlib">
+   eJzt2D0OgkAURtEJ9NJqTe0e2P+qZKIkRGGcaQj6zkm+iobc8BdSAgAAAAAAzqp7jXp7zfqjT+RHdOmzmVZlerXJrZZGWpXVthoOOJez6ArL+vT9uorYa0tNqyxary0trfSqF6nX1r3Y+l0fpVW294wHAAAAuDcusstqucXyP26ad11NK61alFq9H4veqvRsmubd5o3p2S96q6FxR/KuqadVPa3qaQUAAAAAAPyDBwArD9w=
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1">
+  <object x="200.404" y="1039.3" width="334.007" height="259.438"/>
+ </objectgroup>
+</map>
