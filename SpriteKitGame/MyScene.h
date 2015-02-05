@@ -12,6 +12,5 @@
 
 @interface MyScene : SKScene
 
-@property (nonatomic, strong)GameViewController *gameViewController;
 
 @end

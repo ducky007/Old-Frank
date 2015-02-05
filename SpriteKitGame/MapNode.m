@@ -15,6 +15,7 @@
 #import "SMDCoreDataHelper.h"
 #import "TileStackNode.h"
 #import "ItemSprite.h"
+#import "AnimatedItem.h"
 
 @interface MapNode ()
 
@@ -120,9 +121,34 @@
                 NSString *itemName = tileStack.objectItem.itemName;
                 
                 SKTexture *texture = [self getTextureForName:itemName];
+
+                
+                
                 
                 ItemSprite *itemSprite = [ItemSprite spriteNodeWithTexture:texture];
                 itemSprite.name = itemName;
+                
+                if ([tileStack.objectItem isKindOfClass:[AnimatedItem class]])
+                {
+                    AnimatedItem *animatedItem = (AnimatedItem *)tileStack.objectItem;
+                    
+                    NSMutableArray *textures = [[NSMutableArray alloc]init];
+                    [textures addObject:texture];
+                    
+                    for (NSInteger i = 1; i < animatedItem.animatedFrames; i++)
+                    {
+                        NSString *numberString = [NSString stringWithFormat:@"0%@", @(i+1)];
+                        NSString *secondString = [itemName stringByReplacingOccurrencesOfString:@"01" withString:numberString];
+                        SKTexture *texture2 = [self getTextureForName:secondString];
+                        [textures addObject:texture2];
+                    }
+                   
+                    
+                    SKAction *animated = [SKAction animateWithTextures:textures timePerFrame:animatedItem.animatedRate];
+                    
+                    SKAction *repeatAction = [SKAction repeatActionForever:animated];
+                    [itemSprite runAction:repeatAction];
+                }
 
                 tileStackNode.objectItemSprite = itemSprite;
 
@@ -160,7 +186,12 @@
     
     for (NSValue *value in self.map.dirtyIndexes)
     {
+#if TARGET_OS_IPHONE
         CGPoint index = [value CGPointValue];
+#else
+        CGPoint index = [value pointValue];
+#endif
+
         [self updateTileStackAtIndex:index];
     }
 }
@@ -215,6 +246,42 @@
         
         tileStackNode.foregroundItemSprite = itemSprite;
     }
+}
+
+-(void)launchProjectile:(Item *)item atPoint:(CGPoint)startPoint toPoint:(CGPoint)endPoint
+{
+    AnimatedItem *animatedItem = (AnimatedItem *)item;
+    
+    NSMutableArray *textures = [[NSMutableArray alloc]init];
+    
+    for (NSInteger i = 0; i < animatedItem.animatedFrames; i++)
+    {
+        NSString *textureString = [item.itemName stringByReplacingOccurrencesOfString:@"01" withString:[NSString stringWithFormat:@"0%@", @(i+1)]];
+        SKTexture *texture = [self getTextureForName:textureString];
+        [textures addObject:texture];
+    }
+    
+    SKSpriteNode *projectile = [SKSpriteNode spriteNodeWithTexture:textures[0]];
+    projectile.position = startPoint;
+    projectile.zPosition = 4;
+    [self addChild:projectile];
+    
+    SKAction *animateAction = [SKAction animateWithTextures:textures timePerFrame:animatedItem.animatedRate];
+    SKAction *repeatAction = [SKAction repeatActionForever:animateAction];
+    [projectile runAction:repeatAction];
+    
+    SKAction *moveAction = [SKAction moveTo:endPoint duration:.5];
+    SKAction *waitAction = [SKAction waitForDuration:1];
+    SKAction *fadeAction = [SKAction fadeAlphaTo:0 duration:.2];
+    SKAction *customAction = [SKAction customActionWithDuration:0 actionBlock:^(SKNode *node, CGFloat elapsedTime) {
+        [self.delegate doneWithProjectile:item atPoint:endPoint];
+    }];
+    
+    SKAction *removeAction = [SKAction removeFromParent];
+    
+    SKAction *sequence = [SKAction sequence:@[moveAction, waitAction, customAction, fadeAction, removeAction]];
+    [projectile runAction:sequence];
+    
 }
 
 @end

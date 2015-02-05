@@ -7,11 +7,28 @@ Updates, videos, and images of the work in progress can be seen on my facebook p
 
 To Do
 -----
-* Switch Inventory view from UIKit to SpriteKit
-* Sketch out a starting "world" map
+* Give better hint for Yes and No
+* Add Mac funtionality to inventory view
 * Create new tools, Hoe, Watering Can, Axe...etc.
+* Add leveling up skills
+* Add seasons
+* Add mobs
+* Add Attacking
+* Sketch out a starting "world" map
 
+Art Focuses
+----
+* Add remaining tools
+* Animate attacking and using tools
+* Update Invenotry UI
 
 Done
 ----
+* Added Mac Target
+* Fix passing out energy bar and give only %50 energy
+* Add bed and sleeping
+* Switch Inventory view from UIKit to SpriteKit
+
+
+
 

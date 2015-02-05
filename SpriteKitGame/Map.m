@@ -16,6 +16,7 @@
 #import "ItemManager.h"
 #import "ItemEntity.h"
 #import "MapTriggerEntity.h"
+#import "TimeManager.h"
 
 @interface Map ()
 
@@ -26,6 +27,7 @@
 @property (nonatomic)CGPoint playerStart;
 
 @property (nonatomic)BOOL addObjects;
+@property (nonatomic)BOOL hasUpdated;
 
 @end
 
@@ -44,7 +46,6 @@
     
     if (self)
     {
-        
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"map_name = %@", fileName];
         NSArray *maps = [[SMDCoreDataHelper sharedHelper]fetchEntities:@"MapEntity" withPreditcate:predicate];
 
@@ -164,7 +165,6 @@
         [mapTriggers addObject:mapTrigger];
     }
     
-    
     NSInteger x = [mapEntity.start_x integerValue];
     NSInteger y = [mapEntity.start_y integerValue];
     
@@ -179,7 +179,7 @@
 
 -(void)loadFile:(NSString *)fileName
 {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:[fileName stringByDeletingPathExtension] ofType:[fileName pathExtension]];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"json"];
     
     NSError *error = nil;
     
@@ -375,6 +375,16 @@
         [self addRandomObjects];
     }
     
+    //don't to save until after done setting up
+    for (NSInteger i = 0; i < self.mapWidth; i++)
+    {
+        for (NSInteger j = 0; j < self.mapHeight; j++)
+        {
+            TileStack *tileStack = self.mapTiles[i][j];
+            tileStack.shouldSave = YES;
+        }
+    }
+    
     [[SMDCoreDataHelper sharedHelper]save];
 }
 
@@ -431,8 +441,13 @@
 -(NSValue *)rectForTile:(TileStack *)tileStack
 {
     CGRect frame = CGRectMake(tileStack.indexX*self.tileWidth-self.tileWidth/2, -tileStack.indexY*self.tileWidth-self.tileWidth/2, self.tileWidth, self.tileWidth);
-
+    
+#if TARGET_OS_IPHONE
     return [NSValue valueWithCGRect:frame];
+#else
+    return [NSValue valueWithRect:frame];
+#endif
+    
 }
 
 -(void)updateCollisionArrayForPlayer:(Player *)player
@@ -482,18 +497,29 @@
     
     if (tileStack.objectItem.canPickUp)
     {
-        self.canPickUp = YES;
+        self.canUseActionButton = YES;
+        self.actionButtonType = ActionButtonTypeHarvest;
+    }
+    else if(tileStack.objectItem.itemType == ItemTypeFoodstand)
+    {
+        self.canUseActionButton = YES;
+        self.actionButtonType = ActionButtonTypeOpen;
     }
     else
     {
-        self.canPickUp = NO;
+        self.canUseActionButton = NO;
+        self.actionButtonType = ActionButtonTypeNone;
     }
     
     if (tileStack.objectItem || tileStack.isFarmPlot)
     {
-        if (tileStack.objectItem.itemType != ItemTypeBackground)
+        if (tileStack.objectItem.itemType != ItemTypeBackground && tileStack.objectItem.itemType != ItemTypeFoodstand)
         {
             self.outlinePosition = CGPointMake(tileStack.indexX * self.tileWidth, tileStack.indexY * self.tileWidth);
+        }
+        else
+        {
+            self.outlinePosition = CGPointMake(-1000, -1000);
         }
     }
     else
@@ -512,17 +538,39 @@
     
     if (self.player.energy <= 0)
     {
+        NSLog(@"Passed out");
+        
+        [self.delegate displayDialog:[DialogManager getDialogWithDialogName:DialogPassedOut] withBlock:^(DialogResponse response) {
+            
+        }];
+        
         [self updateForNewDay];
-        self.player.energy = 100;
-        [self.delegate setMapTime:480];
+        self.player.energy = self.player.maxEnergy * .5;
+        [[TimeManager sharedManager] setTime:480];
         [self.delegate loadMapWithName:@"house"];
+    }
+    
+    if (self.updateTime)
+    {
+        TimeManager *timeManager = [TimeManager sharedManager];
+        [timeManager addTime:dt];
+        
+        if (!self.hasUpdated && (timeManager.time > 360 && timeManager.time < 370))
+        {
+            [self updateForNewDay];
+            self.hasUpdated = YES;
+        }
+        else if (!(timeManager.time > 360 && timeManager.time < 370))
+        {
+            self.hasUpdated = NO;
+        }
     }
 }
 
 
 -(void)addRandomObjects
 {
-    NSArray *objectArray = @[@"rose", @"rock",@"stump", @"rock",@"stump",@"weed",@"weed",@"weed",@"",@"",@"",@"",@"",@"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @""];
+    NSArray *objectArray = @[@"rose", @"",@"stump", @"",@"stump",@"weed",@"weed",@"weed",@"",@"",@"small_rock",@"small_rock",@"medium_rock",@"medium_rock", @"large_rock", @"", @"", @"large_rock", @"", @"", @"", @"", @"", @"", @"", @"bag_of_gold"];
     
     for (TileStack *tileStack in self.farmPlots)
     {
@@ -558,7 +606,13 @@
                 tileStack.objectItem = seeds;
                 
                 CGPoint index = CGPointMake(tileStack.indexX, tileStack.indexY);
+
+            #if TARGET_OS_IPHONE
                 [self.dirtyIndexes addObject:[NSValue valueWithCGPoint:index]];
+            #else
+                [self.dirtyIndexes addObject:[NSValue valueWithPoint:index]];
+            #endif
+            
             }
         }
     }
@@ -583,7 +637,12 @@
         [tileStack updateForNewDay];
         
         CGPoint index = CGPointMake(tileStack.indexX, tileStack.indexY);
+
+        #if TARGET_OS_IPHONE
         [self.dirtyIndexes addObject:[NSValue valueWithCGPoint:index]];
+        #else
+        [self.dirtyIndexes addObject:[NSValue valueWithPoint:index]];
+        #endif
     }
     
     [self addRandomObjects];
@@ -635,79 +694,152 @@
     TileStack *tileStack = [self tileStackForPlayer:player];
     
     //tilling
-    if (tileStack.isFarmPlot && !tileStack.isTilled && !tileStack.objectItem)
+    if (tileStack.isFarmPlot && !tileStack.isTilled && !tileStack.objectItem &&self.player.equippedTool.itemType == ItemTypeSword)
     {
         Item *item = [[ItemManager sharedManager]getItem:@"tilled"];
         tileStack.backgroundItem = item;
         tileStack.isTilled = YES;
         
         CGPoint index = CGPointMake(tileStack.indexX, tileStack.indexY);
+        
+        #if TARGET_OS_IPHONE
         [self.dirtyIndexes addObject:[NSValue valueWithCGPoint:index]];
+        #else
+        [self.dirtyIndexes addObject:[NSValue valueWithPoint:index]];
+        #endif
         
         self.player.energy -= 5;
 
     }
     //watering
-    else if (tileStack.isFarmPlot && tileStack.isTilled)
+    else if (tileStack.isFarmPlot && tileStack.isTilled && self.player.equippedTool.itemType == ItemTypeWateringCan)
     {
         Item *item = [[ItemManager sharedManager]getItem:@"watered"];
         tileStack.backgroundItem = item;
         tileStack.isWatered = YES;
         
         CGPoint index = CGPointMake(tileStack.indexX, tileStack.indexY);
+        
+        #if TARGET_OS_IPHONE
         [self.dirtyIndexes addObject:[NSValue valueWithCGPoint:index]];
+        #else
+        [self.dirtyIndexes addObject:[NSValue valueWithPoint:index]];
+        #endif
         
         self.player.energy -= 5;
 
     }
 }
 
--(void)secondaryButtonPressedForPlayer:(Player *)player
-{
-    TileStack *tileStack = [self tileStackForPlayer:player];
-    
-    if (!tileStack.objectItem && tileStack.isTilled && player.equippedItem.itemType == ItemTypeSeed)
-    {
-        
-        NSString *plantName = [player.equippedItem.itemName stringByReplacingOccurrencesOfString:@"_seeds" withString:@""];
-        Plant *plant = [PlantManager plantforName:plantName];
-        tileStack.plant = plant;
-        
-        CGPoint index = CGPointMake(tileStack.indexX, tileStack.indexY);
-        [self.dirtyIndexes addObject:[NSValue valueWithCGPoint:index]];
-        
-        [self.player removeItem];
-    }
-}
-
 -(void)actionButtonPressedForPlayer:(Player *)player
 {
     TileStack *tileStack = [self tileStackForPlayer:player];
-    
-    //picking up item
-    if (tileStack.objectItem.canPickUp && !tileStack.plant)
+
+    if (self.actionButtonType == ActionButtonTypeNone)
     {
-        NSString *item = tileStack.objectItem.itemName;
+        NSLog(@"harvest");
         
-        CGPoint index = CGPointMake(tileStack.indexX, tileStack.indexY);
-        [self.dirtyIndexes addObject:[NSValue valueWithCGPoint:index]];
-        
-        tileStack.objectItem = nil;
-        
-        [self.player addItemWithName:item];
+        if (!tileStack.objectItem && tileStack.isTilled && player.equippedItem.itemType == ItemTypeSeed)
+        {
+
+            NSString *plantName = [player.equippedItem.itemName stringByReplacingOccurrencesOfString:@"_seeds" withString:@""];
+            Plant *plant = [PlantManager plantforName:plantName];
+            tileStack.plant = plant;
+            
+            CGPoint index = CGPointMake(tileStack.indexX, tileStack.indexY);
+            
+#if TARGET_OS_IPHONE
+            [self.dirtyIndexes addObject:[NSValue valueWithCGPoint:index]];
+#else
+            [self.dirtyIndexes addObject:[NSValue valueWithPoint:index]];
+#endif
+            
+            [self.player removeItem];
+        }
+        else if (player.equippedItem.itemType == ItemTypeSpellBook)
+        {
+            if ([player.equippedItem.itemName isEqualToString:@"fire_spellbook"])
+            {
+                CGPoint point = CGPointMake(tileStack.indexX*self.tileWidth, tileStack.indexY*self.tileWidth);
+                self.player.energy -= 10;
+                [self.delegate launchProjectile:[[ItemManager sharedManager]getItem:@"fire_01"] fromPoint:self.player.position toPoint:point];
+            }
+        }
     }
-    //picking up plant
-    else if (tileStack.objectItem.canPickUp && tileStack.plant)
+    else
     {
-        NSString *item = tileStack.plant.plantName;
-        tileStack.plant = nil;
+        //picking up item
+        if (self.actionButtonType == ActionButtonTypeHarvest && tileStack.objectItem.canPickUp && !tileStack.plant)
+        {
+            NSString *item = tileStack.objectItem.itemName;
+            
+            CGPoint index = CGPointMake(tileStack.indexX, tileStack.indexY);
+            
+#if TARGET_OS_IPHONE
+            [self.dirtyIndexes addObject:[NSValue valueWithCGPoint:index]];
+#else
+            [self.dirtyIndexes addObject:[NSValue valueWithPoint:index]];
+#endif
+            
+            tileStack.objectItem = nil;
+            
+            [self.player addItemWithName:item];
+        }
+        //picking up plant
+        else if (self.actionButtonType == ActionButtonTypeHarvest && tileStack.objectItem.canPickUp && tileStack.plant)
+        {
+            NSString *item = tileStack.plant.plantName;
+            tileStack.plant = nil;
+            tileStack.objectItem = nil;
+            [self.player addItemWithName:item];
+            
+            CGPoint index = CGPointMake(tileStack.indexX, tileStack.indexY);
+            
+#if TARGET_OS_IPHONE
+            [self.dirtyIndexes addObject:[NSValue valueWithCGPoint:index]];
+#else
+            [self.dirtyIndexes addObject:[NSValue valueWithPoint:index]];
+#endif
+            
+        }
+        else if (self.actionButtonType == ActionButtonTypeOpen && tileStack.objectItem.itemType == ItemTypeFoodstand)
+        {
+            [self.delegate displayDialog:[DialogManager getDialogWithDialogName:DialogNameFoodStand] withBlock:^(DialogResponse response) {
+            }];
+        }
+    }
+
+    
+    
+   
+}
+
+-(void)doneWithProjectile:(Item *)projectile atPoint:(CGPoint)point
+{
+    MapIndex index = [self indexForPositionCGPoint:point];
+    
+    //needs to be switched to block instead of delegate callback
+    if (index.x > self.mapWidth-1 || index.y > self.mapHeight-1)
+    {
+        return;
+    }
+    
+    TileStack *tileStack = self.mapTiles[index.x][index.y];
+    
+    if (tileStack.objectItem.itemType == ItemTypeWood)
+    {
         tileStack.objectItem = nil;
-        [self.player addItemWithName:item];
+        CGPoint dirtyIndex = CGPointMake(index.x, index.y);
         
-        CGPoint index = CGPointMake(tileStack.indexX, tileStack.indexY);
-        [self.dirtyIndexes addObject:[NSValue valueWithCGPoint:index]];
+#if TARGET_OS_IPHONE
+        [self.dirtyIndexes addObject:[NSValue valueWithCGPoint:dirtyIndex]];
+#else
+        [self.dirtyIndexes addObject:[NSValue valueWithPoint:dirtyIndex]];
+#endif    
+        
     }
 }
+
 
 
 @end

@@ -8,7 +8,6 @@
 
 #import "GameViewController.h"
 #import "MyScene.h"
-#import "InventoryViewController.h"
 
 @implementation GameViewController
 
@@ -20,32 +19,17 @@
     SKView * skView = (SKView *)self.view;
    
     skView.ignoresSiblingOrder = YES;
-    skView.showsFPS = YES;
+//    skView.showsFPS = YES;
     
     // Create and configure the scene.
-//    SKScene * scene = [MyScene sceneWithSize:CGSizeMake(self.view.bounds.size.height, self.view.bounds.size.width)];
+    //SKScene * scene = [MyScene sceneWithSize:CGSizeMake(self.view.bounds.size.height, self.view.bounds.size.width)];
     MyScene * scene = [MyScene sceneWithSize:self.view.bounds.size];
 
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
     [skView presentScene:scene];
-    scene.gameViewController = self;
     
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"inventorySegue"])
-    {
-        InventoryViewController *inventoryViewController = segue.destinationViewController;
-        inventoryViewController.player = sender;
-    }
-}
-
--(void)showInventoryViewForPlayer:(Player *)player;
-{
-    [self performSegueWithIdentifier:@"inventorySegue" sender:player];
 }
 
 - (BOOL)shouldAutorotate

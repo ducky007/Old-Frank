@@ -10,6 +10,8 @@
 
 @implementation ButtonSprite
 
+#if TARGET_OS_IPHONE
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"touched");
@@ -40,6 +42,8 @@
     self.alpha = 1;
 
 }
+
+#endif
 
 
 @end

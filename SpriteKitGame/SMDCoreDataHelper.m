@@ -152,8 +152,8 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:kModelName withExtension:@"momd"];
-    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    _managedObjectModel= [NSManagedObjectModel mergedModelFromBundles:nil];
+    
     return _managedObjectModel;
 }
 
@@ -163,6 +163,8 @@
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
+    
+#if TARGET_OS_IPHONE
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite", kModelName]];
     
@@ -180,6 +182,44 @@
         abort();
     }
     
+#else
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *applicationDocumentsDirectory = [self applicationDocumentsDirectory];
+    BOOL shouldFail = NO;
+    NSError *error = nil;
+    NSString *failureReason = @"There was an error creating or loading the application's saved data.";
+    
+    // Make sure the application files directory is there
+    NSDictionary *properties = [applicationDocumentsDirectory resourceValuesForKeys:@[NSURLIsDirectoryKey] error:&error];
+    if (properties) {
+        if (![properties[NSURLIsDirectoryKey] boolValue]) {
+            failureReason = [NSString stringWithFormat:@"Expected a folder to store application data, found a file (%@).", [applicationDocumentsDirectory path]];
+            shouldFail = YES;
+        }
+    } else if ([error code] == NSFileReadNoSuchFileError) {
+        error = nil;
+        [fileManager createDirectoryAtPath:[applicationDocumentsDirectory path] withIntermediateDirectories:YES attributes:nil error:&error];
+    }
+    
+    if (!shouldFail && !error) {
+        NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
+                                 [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+        
+        NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite", kModelName]];
+        
+         _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+        
+        if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error])
+        {
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
+    
+#endif
+    
     return _persistentStoreCoordinator;
 }
 
@@ -188,12 +228,15 @@
 // Returns the URL to the application's Documents directory.
 - (NSURL *)applicationDocumentsDirectory
 {
+#if TARGET_OS_IPHONE
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+#else
+ 
+    NSURL *appSupportURL = [[[NSFileManager defaultManager] URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
+    return [appSupportURL URLByAppendingPathComponent:[[NSBundle mainBundle] bundleIdentifier]];
+
+#endif
+    
 }
-
-
-
-
-
 
 @end

@@ -19,20 +19,21 @@
 
 -(id)init{
     
-    self = [super initWithColor:[UIColor clearColor] size:CGSizeMake(200,200)];
+    self = [super initWithColor:[SKColor clearColor] size:CGSizeMake(200,200)];
     
-    self.zPosition = 101;
+    self.zPosition = 1;
     
     self.background = [SKSpriteNode spriteNodeWithImageNamed:@"joystic_background"];
-    self.background.zPosition = 102;
+    self.background.zPosition = 2;
     self.background.alpha = .5;
     [self addChild:self.background];
     
     self.userInteractionEnabled = YES;
     
     self.joyStick = [SKSpriteNode spriteNodeWithImageNamed:@"joystic"];
-    self.joyStick.zPosition = 103;
+    self.joyStick.zPosition = 3;
     self.joyStick.alpha = .5;
+    
 
     [self addChild:self.joyStick];
 
@@ -46,6 +47,8 @@
     
     return CGPointMake(x/(self.size.width/2), y/(self.size.height/2));
 }
+
+#if TARGET_OS_IPHONE
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -103,8 +106,7 @@
     self.background.position = CGPointZero;
 
     self.joyStick.position = self.background.position;
-
-    
 }
+#endif
 
 @end

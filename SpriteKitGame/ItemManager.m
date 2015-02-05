@@ -7,6 +7,7 @@
 //
 
 #import "ItemManager.h"
+#import "AnimatedItem.h"
 
 @interface ItemManager ()
 
@@ -37,7 +38,25 @@
     
     Item *storedItem = self.items[itemName];
     
-    Item *item = [[Item alloc]init];
+    Item *item;
+    
+    if ([storedItem isKindOfClass:[AnimatedItem class]])
+    {
+        item = [[AnimatedItem alloc]init];
+        AnimatedItem *animatedItem = (AnimatedItem *)item;
+        AnimatedItem *storedAnimatedItem = (AnimatedItem *)storedItem;
+        
+        animatedItem.animatedFrames = storedAnimatedItem.animatedFrames;
+        animatedItem.animatedRate = storedAnimatedItem.animatedRate;
+        
+        NSLog(@"item: %@", storedItem);
+        
+    }
+    else
+    {
+        item = [[Item alloc]init];
+
+    }
     item.itemName = storedItem.itemName;
     item.itemType = storedItem.itemType;
     item.maxStack = storedItem.maxStack;
@@ -88,14 +107,34 @@
         sqlite3_stmt *selectStatement;
         if(sqlite3_prepare_v2(database, sql, -1, &selectStatement, NULL) == SQLITE_OK) {
             while(sqlite3_step(selectStatement) == SQLITE_ROW) {
-                Item *item = [[Item alloc]init];
+                
+                Item *item;
+                
+               BOOL animated = [[NSString stringWithUTF8String:(char *)sqlite3_column_text(selectStatement, 5)] boolValue];
+                
+                if (animated)
+                {
+                     item = [[AnimatedItem alloc]init];
+                    AnimatedItem *animatedItem = (AnimatedItem *)item;
+                     animatedItem.animatedFrames = [[NSString stringWithUTF8String:(char *)sqlite3_column_text(selectStatement, 6)] integerValue];
+                    animatedItem.animatedRate = [[NSString stringWithUTF8String:(char *)sqlite3_column_text(selectStatement, 7)] floatValue];
+                }
+                else
+                {
+                    item = [[Item alloc]init];
+                }
+                
                 item.itemName = [NSString stringWithUTF8String:(char *)sqlite3_column_text(selectStatement, 0)];
                 item.itemType = [[NSString stringWithUTF8String:(char *)sqlite3_column_text(selectStatement, 1)] integerValue];
                 item.maxStack = [[NSString stringWithUTF8String:(char *)sqlite3_column_text(selectStatement, 2)] integerValue];
                 item.impassable = [[NSString stringWithUTF8String:(char *)sqlite3_column_text(selectStatement, 3)] boolValue];
                 item.canPickUp = [[NSString stringWithUTF8String:(char *)sqlite3_column_text(selectStatement, 4)] boolValue];
                 
+                
                 item.quantity = 1;
+                if (animated) {
+                    NSLog(@"ANIMATED NAME: %@, %@", item.itemName, item);
+                }
                 [items setObject:item forKey:item.itemName];
             }
         }

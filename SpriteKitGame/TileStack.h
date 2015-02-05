@@ -13,6 +13,7 @@
 
 @interface TileStack : NSObject
 
+@property (nonatomic)BOOL shouldSave;
 @property (nonatomic, strong)TileStackEntity *tileStackEntity;
 
 @property (nonatomic, strong)Item *backgroundItem;

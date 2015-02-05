@@ -31,7 +31,8 @@
         self.tileStackEntity.background_item = itemEntiy;
     }
     
-    [[SMDCoreDataHelper sharedHelper]save];
+    if(self.shouldSave)
+        [[SMDCoreDataHelper sharedHelper]save];
     
     _backgroundItem = backgroundItem;
 }
@@ -54,7 +55,8 @@
         self.tileStackEntity.object_item = itemEntiy;
     }
     
-    [[SMDCoreDataHelper sharedHelper]save];
+    if(self.shouldSave)
+        [[SMDCoreDataHelper sharedHelper]save];
     
     _objectItem = objectItem;
 
@@ -78,7 +80,8 @@
         self.tileStackEntity.foreground_item = itemEntiy;
     }
     
-    [[SMDCoreDataHelper sharedHelper]save];
+    if(self.shouldSave)
+        [[SMDCoreDataHelper sharedHelper]save];
     
     _foregroundItem = foregroundItem;
     

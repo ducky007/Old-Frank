@@ -8,16 +8,27 @@
 
 #import <Foundation/Foundation.h>
 #import "Player.h"
+#import "TileStack.h"
+#import "DialogManager.h"
 
 typedef struct {
     NSInteger x;
     NSInteger y;
 } MapIndex;
 
+typedef NS_ENUM(NSUInteger, ActionButtonType) {
+    ActionButtonTypeNone,
+    ActionButtonTypeHarvest,
+    ActionButtonTypeSleep,
+    ActionButtonTypeTalk,
+    ActionButtonTypeOpen,
+};
+
 @protocol MapDelegate <NSObject>
 
 -(void)loadMapWithName:(NSString *)mapName;
--(void)setMapTime:(float)time;
+-(void)displayDialog:(Dialog *)dialog withBlock:(DialogBlock)completion;
+-(void)launchProjectile:(Item *)projectile fromPoint:(CGPoint)startPoint toPoint:(CGPoint)point;
 
 @end
 
@@ -36,7 +47,8 @@ typedef struct {
 @property (nonatomic)float currentTime;
 
 @property (nonatomic)BOOL updateTime;
-@property (nonatomic)BOOL canPickUp;
+@property (nonatomic)BOOL canUseActionButton;
+@property (nonatomic)ActionButtonType actionButtonType;
 
 @property (nonatomic, strong)NSMutableArray *dirtyIndexes;
 
@@ -48,10 +60,10 @@ typedef struct {
 -(void)update:(float)dt;
 
 -(void)primaryButtonPressedForPlayer:(Player *)player;
--(void)secondaryButtonPressedForPlayer:(Player *)player;
 -(void)actionButtonPressedForPlayer:(Player *)player;
 
+-(void)doneWithProjectile:(Item *)projectile atPoint:(CGPoint)point;
 
-
+-(TileStack *)tileStackForPlayer:(Player *)player;
 
 @end

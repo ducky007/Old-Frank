@@ -28,8 +28,8 @@ static inline CGPoint rwMult(CGPoint a, float b) {
     NSArray *players = [[SMDCoreDataHelper sharedHelper]fetchEntities:@"PlayerEntity"];
     self.imageName = @"knight";
     
-    self.width = 32;
-    self.height = 64;
+    self.width = 30;
+    self.height = 60;
     self.rows = 4;
     self.columns = 2;
 
@@ -50,6 +50,7 @@ static inline CGPoint rwMult(CGPoint a, float b) {
         self.maxEnergy = 100;
         
         [self addItemWithName:@"basic_sword"];
+        [self addItemWithName:@"fire_spellbook"];
         [self addItemWithName:@"basic_watering_can"];
 
     }
@@ -72,7 +73,7 @@ static inline CGPoint rwMult(CGPoint a, float b) {
 -(void)loadPlayerFromCoreData:(PlayerEntity *)playerEntity
 {
     self.energy = [playerEntity.energy floatValue];
-    self.maxEnergy = [playerEntity.energy floatValue];
+    self.maxEnergy = [playerEntity.max_energy floatValue];
     self.equippedItem = [[Item alloc]initWithItemEntity:playerEntity.equppied_item];
     self.equippedTool = [[Item alloc]initWithItemEntity:playerEntity.equipped_tool];
     
@@ -84,7 +85,7 @@ static inline CGPoint rwMult(CGPoint a, float b) {
     }
     
     self.playerEntity = playerEntity;
-
+    
 }
 
 -(NSMutableArray *)inventory
@@ -163,6 +164,9 @@ static inline CGPoint rwMult(CGPoint a, float b) {
             [self equipTool:item];
             break;
         case ItemTypeSeed:
+            [self equipRegularItem:item];
+            break;
+        case ItemTypeSpellBook:
             [self equipRegularItem:item];
             break;
             
@@ -301,7 +305,12 @@ static inline CGPoint rwMult(CGPoint a, float b) {
     
     for (NSValue *value in self.collisionRects)
     {
+        
+#if TARGET_OS_IPHONE
         CGRect collisionRect = [value CGRectValue];
+#else
+        CGRect collisionRect = [value rectValue];
+#endif
         
         //x first
         if (self.moveVelocity.x != 0)
@@ -310,7 +319,17 @@ static inline CGPoint rwMult(CGPoint a, float b) {
             
             if (CGRectIntersectsRect(collisionRect, playerRect))
             {
-                self.moveVelocity = CGPointMake(0, self.moveVelocity.y);
+                //modify x
+                if (self.moveVelocity.x > 0)
+                {
+                    float diff = playerRect.origin.x+playerRect.size.width-collisionRect.origin.x;
+                    self.moveVelocity = CGPointMake(self.moveVelocity.x-diff, self.moveVelocity.y);
+                }
+                else
+                {
+                    float diff = collisionRect.origin.x+collisionRect.size.width-playerRect.origin.x;
+                    self.moveVelocity = CGPointMake(self.moveVelocity.x+diff, self.moveVelocity.y);
+                }
             }
             
             playerRect.origin.x -= (int)oldVelocity.x;
@@ -323,10 +342,35 @@ static inline CGPoint rwMult(CGPoint a, float b) {
             
             if (CGRectIntersectsRect(collisionRect, playerRect))
             {
-                self.moveVelocity = CGPointMake(self.moveVelocity.x, 0);
+                //modify y
+                if (self.moveVelocity.y > 0)
+                {
+                    float diff = collisionRect.origin.y+collisionRect.size.height-playerRect.origin.y;
+                    self.moveVelocity = CGPointMake(self.moveVelocity.x, self.moveVelocity.y-diff);
+                }
+                else
+                {
+                    float diff = playerRect.origin.y+playerRect.size.height-collisionRect.origin.y;
+                    self.moveVelocity = CGPointMake(self.moveVelocity.x, self.moveVelocity.y+diff);
+                }
+
             }
             
             playerRect.origin.y += (int)oldVelocity.y;
+        }
+    }
+    
+    if (self.moveVelocity.x != oldVelocity.x && self.moveVelocity.y != oldVelocity.y)
+    {
+        NSLog(@"Picking One");
+        //pick one
+        if (abs(self.moveVelocity.x) < abs(self.moveVelocity.y))
+        {
+            self.moveVelocity = CGPointMake(self.moveVelocity.x, 0);
+        }
+        else
+        {
+            self.moveVelocity = CGPointMake(0, self.moveVelocity.y);
         }
     }
     

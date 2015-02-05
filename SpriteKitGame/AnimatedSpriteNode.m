@@ -41,7 +41,8 @@
             for (NSInteger j = 0; j < width; j++)
             {
                 SKTexture *texture = [SKTexture textureWithRect:CGRectMake(j*widthPercent, i*heightPercent, widthPercent, heightPercent) inTexture:fullTexture];
-                
+                texture.filteringMode = SKTextureFilteringNearest;
+
                 [textureArray addObject:texture];
             }
             
@@ -65,11 +66,13 @@
             }
         }
         
+        
+        
         self.walkingArray = @[self.walkUp, self.walkDown, self.walkLeft, self.walkRight];
         
         self.texture = self.walkRight[0];
         self.size = self.texture.size;
-        NSLog(@"Size: %@", NSStringFromCGSize(self.size));
+        //NSLog(@"Size: %@", NSStringFromCGSize(self.size));
 
         self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.size.width, self.size.height/2) center:CGPointMake(0, -self.size.height/4)];
         self.physicsBody.dynamic = YES;

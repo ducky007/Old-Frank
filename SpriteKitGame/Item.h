@@ -10,14 +10,16 @@
 #import "ItemEntity.h"
 
 typedef NS_ENUM(NSUInteger, ItemType) {
-    ItemTypeSeed,
-    ItemTypePlant,
-    ItemTypeHoe,
-    ItemTypeSword,
-    ItemTypeWateringCan,
-    ItemTypeBackground,
-    ItemTypeWood,
-    ItemTypeRock,
+    ItemTypeSeed = 0,
+    ItemTypePlant = 1,
+    ItemTypeHoe = 2,
+    ItemTypeSword = 3,
+    ItemTypeWateringCan = 4,
+    ItemTypeBackground = 5,
+    ItemTypeWood = 6,
+    ItemTypeRock = 7,
+    ItemTypeSpellBook = 8,
+    ItemTypeFoodstand = 9,
 };
 
 
