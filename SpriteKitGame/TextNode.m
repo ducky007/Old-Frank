@@ -8,7 +8,7 @@
 
 #import "TextNode.h"
 #import "ButtonSprite.h"
-#import "TextureLoader.h"
+#import "SMDTextureLoader.h"
 
 @interface TextNode ()<ButtonSpriteDelegate>
 
@@ -25,7 +25,7 @@
 @property (nonatomic, strong)ButtonSprite *contButton;
 
 @property (nonatomic, strong)NSDictionary *imageDictionary;
-@property (nonatomic, strong)TextureLoader *textureLoader;
+@property (nonatomic, strong)SMDTextureLoader *textureLoader;
 
 @end
 
@@ -34,7 +34,7 @@
 -(id)initWithSize:(CGSize)size withDialog:(Dialog *)dialog
 {
     self = [super init];
-    self.textureLoader = [[TextureLoader alloc]init];
+    self.textureLoader = [[SMDTextureLoader alloc]init];
     
     self.dialog = dialog;
     self.size = size;

@@ -17,7 +17,7 @@
 #import "TimeManager.h"
 #import "TextNode.h"
 #import "FoodStandNode.h"
-#import "TextureLoader.h"
+#import "SMDTextureLoader.h"
 
 @interface MyScene ()<MapDelegate, ButtonSpriteDelegate, TextNodeDelegate, MapNodeDelegate>
 
@@ -55,7 +55,7 @@
 
 @property (nonatomic, strong)FoodStandNode *foodStandNode;
 
-@property (nonatomic, strong)TextureLoader *textureLoader;
+@property (nonatomic, strong)SMDTextureLoader *textureLoader;
 
 @end
 
@@ -66,7 +66,7 @@
 -(void)didMoveToView:(SKView *)view
 {
 
-    self.textureLoader = [[TextureLoader alloc]init];
+    self.textureLoader = [[SMDTextureLoader alloc]init];
     
     self.physicsWorld.gravity = CGVectorMake(0, 0);
     

@@ -9,7 +9,7 @@
 #import "InventoryController.h"
 #import "ButtonSprite.h"
 #import "ItemButtonSprite.h"
-#import "TextureLoader.h"
+#import "SMDTextureLoader.h"
 
 @interface InventoryController ()<ButtonSpriteDelegate, ItemButtonSpriteDelegate>
 
@@ -26,7 +26,7 @@
 @property (nonatomic)CGSize size;
 
 @property (nonatomic, strong)NSMutableArray *inventoryButtons;
-@property (nonatomic, strong)TextureLoader *textureLoader;
+@property (nonatomic, strong)SMDTextureLoader *textureLoader;
 
 @end
 
@@ -36,7 +36,7 @@
 {
     self = [super init];
     
-    self.textureLoader = [[TextureLoader alloc]init];
+    self.textureLoader = [[SMDTextureLoader alloc]init];
     
     self.size = size;
     

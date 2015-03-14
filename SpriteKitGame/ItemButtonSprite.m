@@ -7,11 +7,11 @@
 //
 
 #import "ItemButtonSprite.h"
-#import "TextureLoader.h"
+#import "SMDTextureLoader.h"
 
 @interface ItemButtonSprite ()
 
-@property (nonatomic, strong)TextureLoader *textureLoader;
+@property (nonatomic, strong)SMDTextureLoader *textureLoader;
 
 @end
 
@@ -21,7 +21,7 @@
 {
     
     self = [super init];
-    self.textureLoader = [[TextureLoader alloc]init];
+    self.textureLoader = [[SMDTextureLoader alloc]init];
     
     self.texture = [self.textureLoader getTextureForName:@"outline"];
     self.size = self.texture.size;

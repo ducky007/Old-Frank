@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 Sky Mist Development. All rights reserved.
 //
 
-#import "TextureLoader.h"
+#import "SMDTextureLoader.h"
 
 
-@interface TextureLoader ()
+@interface SMDTextureLoader ()
 
 @property (nonatomic, strong)NSMutableDictionary *textures;
 
 @end
 
-@implementation TextureLoader
+@implementation SMDTextureLoader
 
 -(id)init
 {
@@ -34,7 +34,7 @@
     if (!texture)
     {
         texture = [SKTexture textureWithImageNamed:name];
-        texture.filteringMode = SKTextureFilteringNearest;
+        texture.filteringMode = FILTER_MODE;
         [self.textures setObject:texture forKey:name];
     }
     

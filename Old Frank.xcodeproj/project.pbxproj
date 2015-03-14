@@ -112,8 +112,8 @@
 		B6C8B0621A9049D200369F35 /* InventoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C8B0611A9049D200369F35 /* InventoryController.m */; };
 		B6CF46011AB4851E0096EB01 /* hud.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B6CF46001AB4851E0096EB01 /* hud.atlas */; };
 		B6CF46031AB4863C0096EB01 /* knight.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CF46021AB4863C0096EB01 /* knight.png */; };
-		B6CF46061AB487DC0096EB01 /* TextureLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF46051AB487DC0096EB01 /* TextureLoader.m */; };
-		B6CF46071AB488480096EB01 /* TextureLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF46051AB487DC0096EB01 /* TextureLoader.m */; };
+		B6CF46061AB487DC0096EB01 /* SMDTextureLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF46051AB487DC0096EB01 /* SMDTextureLoader.m */; };
+		B6CF46071AB488480096EB01 /* SMDTextureLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF46051AB487DC0096EB01 /* SMDTextureLoader.m */; };
 		B6D688181A7FB04100FD3184 /* basic_watering_can_gear.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D688171A7FB04100FD3184 /* basic_watering_can_gear.png */; };
 		B6D6881A1A80665300FD3184 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D688191A80665300FD3184 /* View.xib */; };
 		B6D6885A1A82DFA500FD3184 /* ItemButtonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D688591A82DFA500FD3184 /* ItemButtonSprite.m */; };
@@ -236,8 +236,8 @@
 		B6C8B0611A9049D200369F35 /* InventoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InventoryController.m; sourceTree = "<group>"; };
 		B6CF46001AB4851E0096EB01 /* hud.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = hud.atlas; sourceTree = "<group>"; };
 		B6CF46021AB4863C0096EB01 /* knight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knight.png; sourceTree = "<group>"; };
-		B6CF46041AB487DC0096EB01 /* TextureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureLoader.h; sourceTree = "<group>"; };
-		B6CF46051AB487DC0096EB01 /* TextureLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextureLoader.m; sourceTree = "<group>"; };
+		B6CF46041AB487DC0096EB01 /* SMDTextureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMDTextureLoader.h; sourceTree = "<group>"; };
+		B6CF46051AB487DC0096EB01 /* SMDTextureLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMDTextureLoader.m; sourceTree = "<group>"; };
 		B6D688171A7FB04100FD3184 /* basic_watering_can_gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basic_watering_can_gear.png; sourceTree = "<group>"; };
 		B6D688191A80665300FD3184 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		B6D688581A82DFA500FD3184 /* ItemButtonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemButtonSprite.h; sourceTree = "<group>"; };
@@ -497,8 +497,8 @@
 		B690F6C71A98341E00E0D300 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				B6CF46041AB487DC0096EB01 /* TextureLoader.h */,
-				B6CF46051AB487DC0096EB01 /* TextureLoader.m */,
+				B6CF46041AB487DC0096EB01 /* SMDTextureLoader.h */,
+				B6CF46051AB487DC0096EB01 /* SMDTextureLoader.m */,
 				B6C8B0601A9049D200369F35 /* InventoryController.h */,
 				B6C8B0611A9049D200369F35 /* InventoryController.m */,
 				B6D85EA51A67E8FD00E73066 /* Core Data */,
@@ -752,7 +752,7 @@
 				B61228F81A9A1589002C3D4E /* AnimatedItem.m in Sources */,
 				B6DDE2DE1A88E387000D3BE6 /* TimeManager.m in Sources */,
 				B64D71F41A9DF9AF004C2F79 /* Dialog.m in Sources */,
-				B6CF46061AB487DC0096EB01 /* TextureLoader.m in Sources */,
+				B6CF46061AB487DC0096EB01 /* SMDTextureLoader.m in Sources */,
 				B64C78D31914787500A2D065 /* AnimatedSpriteNode.m in Sources */,
 				B67FB82D1A538C69000B488F /* PlayerAnimatedSpriteNode.m in Sources */,
 				B6D85EA41A67416B00E73066 /* oldfrank.xcdatamodeld in Sources */,
@@ -803,7 +803,7 @@
 				B690F6741A9822E800E0D300 /* ItemSprite.m in Sources */,
 				B690F65F1A9822A700E0D300 /* PlantManager.m in Sources */,
 				B690F6551A98228200E0D300 /* SMDCoreDataHelper.m in Sources */,
-				B6CF46071AB488480096EB01 /* TextureLoader.m in Sources */,
+				B6CF46071AB488480096EB01 /* SMDTextureLoader.m in Sources */,
 				B690F67F1A98232D00E0D300 /* ItemButtonSprite.m in Sources */,
 				B690F65E1A9822A400E0D300 /* MapManager.m in Sources */,
 				B690F6561A98228900E0D300 /* Map.m in Sources */,

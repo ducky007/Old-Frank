@@ -7,13 +7,13 @@
 //
 
 #import "AnalogSpriteNode.h"
-#import "TextureLoader.h"
+#import "SMDTextureLoader.h"
 
 @interface AnalogSpriteNode ()
 
 @property (nonatomic, strong)SKSpriteNode *background;
 @property (nonatomic, strong)SKSpriteNode *joyStick;
-@property (nonatomic, strong)TextureLoader *textureLoader;
+@property (nonatomic, strong)SMDTextureLoader *textureLoader;
 
 @end
 
@@ -21,7 +21,7 @@
 
 -(id)init{
     
-    self.textureLoader = [[TextureLoader alloc]init];
+    self.textureLoader = [[SMDTextureLoader alloc]init];
     
     self = [super initWithColor:[SKColor clearColor] size:CGSizeMake(200,200)];
     

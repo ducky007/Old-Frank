@@ -16,7 +16,7 @@
 #import "TileStackNode.h"
 #import "ItemSprite.h"
 #import "AnimatedItem.h"
-#import "TextureLoader.h"
+#import "SMDTextureLoader.h"
 
 @interface MapNode ()
 
@@ -31,7 +31,7 @@
 
 @property (nonatomic, strong)NSArray *tileStackNodes;
 
-@property (nonatomic, strong)TextureLoader *textureLoader;
+@property (nonatomic, strong)SMDTextureLoader *textureLoader;
 
 @end
 
@@ -42,7 +42,7 @@
     self = [super init];
     
     if (self) {
-        self.textureLoader = [[TextureLoader alloc]init];
+        self.textureLoader = [[SMDTextureLoader alloc]init];
         NSLog(@"Loading Map now");
         self.map = map;
         [self loadMap:map];

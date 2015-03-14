@@ -9,7 +9,7 @@
 #import "FoodStandNode.h"
 #import "ButtonSprite.h"
 #import "DragItemButtonSprite.h"
-#import "TextureLoader.h"
+#import "SMDTextureLoader.h"
 
 @interface FoodStandNode ()<ItemButtonSpriteDelegate, ButtonSpriteDelegate>
 
@@ -18,7 +18,7 @@
 @property (nonatomic, strong)NSMutableArray *inventoryButtons;
 @property (nonatomic, strong)ButtonSprite *closeButtonSprite;
 
-@property (nonatomic, strong)TextureLoader *textureLoader;
+@property (nonatomic, strong)SMDTextureLoader *textureLoader;
 
 
 @end
@@ -29,7 +29,7 @@
 {
     self = [super init];
 
-    self.textureLoader = [[TextureLoader alloc]init];
+    self.textureLoader = [[SMDTextureLoader alloc]init];
     
     self.zPosition = 20;
     self.player = player;
