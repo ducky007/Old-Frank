@@ -804,8 +804,10 @@
         }
         else if (self.actionButtonType == ActionButtonTypeOpen && tileStack.objectItem.itemType == ItemTypeFoodstand)
         {
-            [self.delegate displayDialog:[DialogManager getDialogWithDialogName:DialogNameFoodStand] withBlock:^(DialogResponse response) {
-            }];
+            [self.delegate showFoodStand];
+            
+//            [self.delegate displayDialog:[DialogManager getDialogWithDialogName:DialogNameFoodStand] withBlock:^(DialogResponse response) {
+//            }];
         }
     }
 

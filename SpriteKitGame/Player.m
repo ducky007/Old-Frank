@@ -32,8 +32,6 @@ static inline CGPoint rwMult(CGPoint a, float b) {
     self.height = 60;
     self.rows = 4;
     self.columns = 2;
-
-
    
     if (players.count == 1)
     {

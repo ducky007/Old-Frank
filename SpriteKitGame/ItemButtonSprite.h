@@ -23,5 +23,6 @@
 
 @property (weak)id<ItemButtonSpriteDelegate> delegate;
 @property (nonatomic, strong)Item *item;
+@property (nonatomic, strong)SKSpriteNode *itemSprite;
 
 @end

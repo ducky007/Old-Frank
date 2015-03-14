@@ -8,21 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B61228F81A9A1589002C3D4E /* AnimatedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B61228F71A9A1589002C3D4E /* AnimatedItem.m */; };
-		B61228FA1A9B587B002C3D4E /* select_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = B61228F91A9B587B002C3D4E /* select_outline.png */; };
 		B61228FB1A9B5A0D002C3D4E /* AnimatedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B61228F71A9A1589002C3D4E /* AnimatedItem.m */; };
-		B61228FC1A9B5A2B002C3D4E /* select_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = B61228F91A9B587B002C3D4E /* select_outline.png */; };
 		B61FDA881915DCF40067B14B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B61FDA871915DCF40067B14B /* libz.dylib */; };
 		B624776E1A7087A8003DC066 /* TileStackNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B624776D1A7087A8003DC066 /* TileStackNode.m */; };
 		B62477741A708960003DC066 /* ItemSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B62477731A708960003DC066 /* ItemSprite.m */; };
 		B624ACE31A55D7E1006864A0 /* TileStack.m in Sources */ = {isa = PBXBuildFile; fileRef = B624ACE21A55D7E1006864A0 /* TileStack.m */; };
-		B624ACE51A582D0B006864A0 /* harvest.png in Resources */ = {isa = PBXBuildFile; fileRef = B624ACE41A582D0B006864A0 /* harvest.png */; };
 		B6437E451A5981070000E8E7 /* MapTile.m in Sources */ = {isa = PBXBuildFile; fileRef = B6437E441A5981070000E8E7 /* MapTile.m */; };
-		B6437E491A59D1340000E8E7 /* backpack.png in Resources */ = {isa = PBXBuildFile; fileRef = B6437E471A59D1340000E8E7 /* backpack.png */; };
-		B6437E4F1A5A08E90000E8E7 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = B6437E4D1A5A08E90000E8E7 /* player.png */; };
 		B64603ED1A51845000EC66DF /* farm.json in Resources */ = {isa = PBXBuildFile; fileRef = B64603EC1A51845000EC66DF /* farm.json */; };
 		B64603F01A5184BF00EC66DF /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = B64603EE1A5184BF00EC66DF /* background.png */; };
-		B64603F11A5184BF00EC66DF /* farm in Resources */ = {isa = PBXBuildFile; fileRef = B64603EF1A5184BF00EC66DF /* farm */; };
-		B64603F51A518AAE00EC66DF /* knight.png in Resources */ = {isa = PBXBuildFile; fileRef = B64603F41A518AAE00EC66DF /* knight.png */; };
 		B64975991A75E401003D5C8E /* PlayerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975981A75E401003D5C8E /* PlayerEntity.m */; };
 		B649759F1A75E402003D5C8E /* PlantEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B649759E1A75E402003D5C8E /* PlantEntity.m */; };
 		B64975A21A75E402003D5C8E /* TileStackEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975A11A75E402003D5C8E /* TileStackEntity.m */; };
@@ -50,9 +43,6 @@
 		B6558A901A5B874200628C37 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = B6558A8F1A5B874200628C37 /* Player.m */; };
 		B66796391A79E8EC0051FFCD /* AnalogSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B66796381A79E8EC0051FFCD /* AnalogSpriteNode.m */; };
 		B67FB82D1A538C69000B488F /* PlayerAnimatedSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B67FB82C1A538C69000B488F /* PlayerAnimatedSpriteNode.m */; };
-		B67FB8301A5393C7000B488F /* joystic.png in Resources */ = {isa = PBXBuildFile; fileRef = B67FB82E1A5393C7000B488F /* joystic.png */; };
-		B67FB8341A5396C1000B488F /* joystic_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B67FB8321A5396C1000B488F /* joystic_background.png */; };
-		B67FB8401A54CEF1000B488F /* outline.png in Resources */ = {isa = PBXBuildFile; fileRef = B67FB83E1A54CEF1000B488F /* outline.png */; };
 		B67FC46B1A712CFD00CD5876 /* background.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B67FC46A1A712CFD00CD5876 /* background.atlas */; };
 		B6825C4D193A069D000449FA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B6825C4C193A069D000449FA /* README.md */; };
 		B6837DA719194CEB00D5B30C /* MapNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B6837DA619194CEB00D5B30C /* MapNode.m */; };
@@ -61,7 +51,6 @@
 		B690F6331A98220C00E0D300 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B690F6321A98220C00E0D300 /* GameViewController.m */; };
 		B690F6371A98220D00E0D300 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B690F6361A98220D00E0D300 /* Images.xcassets */; };
 		B690F64D1A98224E00E0D300 /* TextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DDE2E21A89B6FB000D3BE6 /* TextNode.m */; };
-		B690F64E1A98225800E0D300 /* dialogBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C8B0631A90632C00369F35 /* dialogBackground.png */; };
 		B690F64F1A98226C00E0D300 /* MapTriggerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975B01A75E752003D5C8E /* MapTriggerEntity.m */; };
 		B690F6501A98226F00E0D300 /* MapEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975AD1A75E752003D5C8E /* MapEntity.m */; };
 		B690F6511A98227200E0D300 /* ItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975A41A75E402003D5C8E /* ItemEntity.m */; };
@@ -83,21 +72,10 @@
 		B690F6611A9822AE00E0D300 /* items.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = B6DAA5231A5EB37400E0DB61 /* items.sqlite3 */; };
 		B690F6621A9822B100E0D300 /* text.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B6DDE2DF1A89B63B000D3BE6 /* text.atlas */; };
 		B690F6631A9822B400E0D300 /* items.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B6D6885D1A846F8100FD3184 /* items.atlas */; };
-		B690F6641A9822BA00E0D300 /* knight.png in Resources */ = {isa = PBXBuildFile; fileRef = B64603F41A518AAE00EC66DF /* knight.png */; };
 		B690F6651A9822C300E0D300 /* basic_watering_can_gear.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D688171A7FB04100FD3184 /* basic_watering_can_gear.png */; };
 		B690F6661A9822C300E0D300 /* basic_sword_gear.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DAA52C1A60AD6700E0DB61 /* basic_sword_gear.png */; };
 		B690F6671A9822CA00E0D300 /* house.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B6BDDA161A7551380041DFA1 /* house.atlas */; };
 		B690F6681A9822CE00E0D300 /* background.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B67FC46A1A712CFD00CD5876 /* background.atlas */; };
-		B690F6691A9822D600E0D300 /* sleep.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DDE2DA1A88E191000D3BE6 /* sleep.png */; };
-		B690F66A1A9822D600E0D300 /* unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DAA5341A60B7D100E0DB61 /* unknown.png */; };
-		B690F66B1A9822D600E0D300 /* primary_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DAA5321A60B62100E0DB61 /* primary_background.png */; };
-		B690F66C1A9822D600E0D300 /* secondary_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DAA5301A60B4DF00E0DB61 /* secondary_background.png */; };
-		B690F66D1A9822D600E0D300 /* harvest.png in Resources */ = {isa = PBXBuildFile; fileRef = B624ACE41A582D0B006864A0 /* harvest.png */; };
-		B690F66E1A9822D600E0D300 /* joystic_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B67FB8321A5396C1000B488F /* joystic_background.png */; };
-		B690F66F1A9822D600E0D300 /* joystic.png in Resources */ = {isa = PBXBuildFile; fileRef = B67FB82E1A5393C7000B488F /* joystic.png */; };
-		B690F6701A9822D600E0D300 /* outline.png in Resources */ = {isa = PBXBuildFile; fileRef = B67FB83E1A54CEF1000B488F /* outline.png */; };
-		B690F6711A9822D600E0D300 /* backpack.png in Resources */ = {isa = PBXBuildFile; fileRef = B6437E471A59D1340000E8E7 /* backpack.png */; };
-		B690F6721A9822DB00E0D300 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = B6437E4D1A5A08E90000E8E7 /* player.png */; };
 		B690F6731A9822E800E0D300 /* MapTile.m in Sources */ = {isa = PBXBuildFile; fileRef = B6437E441A5981070000E8E7 /* MapTile.m */; };
 		B690F6741A9822E800E0D300 /* ItemSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B62477731A708960003DC066 /* ItemSprite.m */; };
 		B690F6751A9822E800E0D300 /* TileStackNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B624776D1A7087A8003DC066 /* TileStackNode.m */; };
@@ -124,13 +102,16 @@
 		B690F6C31A982B2100E0D300 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B690F6C21A982B2100E0D300 /* Foundation.framework */; };
 		B690F6C51A982BC900E0D300 /* MacStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B690F6C41A982BC900E0D300 /* MacStoryboard.storyboard */; };
 		B690F6C61A9832BE00E0D300 /* oldfrank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6D85EA21A67416B00E73066 /* oldfrank.xcdatamodeld */; };
+		B6B1D6BF1AB0FFD80038C992 /* FoodStandNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B1D6BE1AB0FFD80038C992 /* FoodStandNode.m */; };
+		B6B1D6C21AB109D70038C992 /* DragItemButtonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B1D6C11AB109D70038C992 /* DragItemButtonSprite.m */; };
 		B6BDDA171A7551380041DFA1 /* house.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B6BDDA161A7551380041DFA1 /* house.atlas */; };
 		B6C88E8C1A6550020003F116 /* farm.tmx in Resources */ = {isa = PBXBuildFile; fileRef = B6C88E881A6550020003F116 /* farm.tmx */; };
 		B6C88E8D1A6550020003F116 /* house.json in Resources */ = {isa = PBXBuildFile; fileRef = B6C88E891A6550020003F116 /* house.json */; };
 		B6C88E8E1A6550020003F116 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C88E8A1A6550020003F116 /* house.png */; };
 		B6C88E8F1A6550020003F116 /* house.tmx in Resources */ = {isa = PBXBuildFile; fileRef = B6C88E8B1A6550020003F116 /* house.tmx */; };
 		B6C8B0621A9049D200369F35 /* InventoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C8B0611A9049D200369F35 /* InventoryController.m */; };
-		B6C8B0641A90632C00369F35 /* dialogBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C8B0631A90632C00369F35 /* dialogBackground.png */; };
+		B6CF46011AB4851E0096EB01 /* hud.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B6CF46001AB4851E0096EB01 /* hud.atlas */; };
+		B6CF46031AB4863C0096EB01 /* knight.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CF46021AB4863C0096EB01 /* knight.png */; };
 		B6D688181A7FB04100FD3184 /* basic_watering_can_gear.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D688171A7FB04100FD3184 /* basic_watering_can_gear.png */; };
 		B6D6881A1A80665300FD3184 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D688191A80665300FD3184 /* View.xib */; };
 		B6D6885A1A82DFA500FD3184 /* ItemButtonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D688591A82DFA500FD3184 /* ItemButtonSprite.m */; };
@@ -147,12 +128,8 @@
 		B6DAA5221A5EB17000E0DB61 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6DAA5211A5EB17000E0DB61 /* QuartzCore.framework */; };
 		B6DAA5241A5EB37400E0DB61 /* items.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = B6DAA5231A5EB37400E0DB61 /* items.sqlite3 */; };
 		B6DAA52E1A60AD6700E0DB61 /* basic_sword_gear.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DAA52C1A60AD6700E0DB61 /* basic_sword_gear.png */; };
-		B6DAA5311A60B4DF00E0DB61 /* secondary_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DAA5301A60B4DF00E0DB61 /* secondary_background.png */; };
-		B6DAA5331A60B62100E0DB61 /* primary_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DAA5321A60B62100E0DB61 /* primary_background.png */; };
-		B6DAA5351A60B7D100E0DB61 /* unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DAA5341A60B7D100E0DB61 /* unknown.png */; };
 		B6DDE2A01A8846A8000D3BE6 /* MapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DDE29F1A8846A8000D3BE6 /* MapManager.m */; };
 		B6DDE2A31A884783000D3BE6 /* HouseMap.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DDE2A21A884783000D3BE6 /* HouseMap.m */; };
-		B6DDE2DB1A88E191000D3BE6 /* sleep.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DDE2DA1A88E191000D3BE6 /* sleep.png */; };
 		B6DDE2DE1A88E387000D3BE6 /* TimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DDE2DD1A88E387000D3BE6 /* TimeManager.m */; };
 		B6DDE2E01A89B63B000D3BE6 /* text.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B6DDE2DF1A89B63B000D3BE6 /* text.atlas */; };
 		B6DDE2E31A89B6FB000D3BE6 /* TextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DDE2E21A89B6FB000D3BE6 /* TextNode.m */; };
@@ -163,7 +140,6 @@
 /* Begin PBXFileReference section */
 		B61228F61A9A1589002C3D4E /* AnimatedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedItem.h; sourceTree = "<group>"; };
 		B61228F71A9A1589002C3D4E /* AnimatedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedItem.m; sourceTree = "<group>"; };
-		B61228F91A9B587B002C3D4E /* select_outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_outline.png; sourceTree = "<group>"; };
 		B61FDA871915DCF40067B14B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		B624776C1A7087A8003DC066 /* TileStackNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileStackNode.h; sourceTree = "<group>"; };
 		B624776D1A7087A8003DC066 /* TileStackNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileStackNode.m; sourceTree = "<group>"; };
@@ -171,15 +147,10 @@
 		B62477731A708960003DC066 /* ItemSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemSprite.m; sourceTree = "<group>"; };
 		B624ACE11A55D7E1006864A0 /* TileStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileStack.h; sourceTree = "<group>"; };
 		B624ACE21A55D7E1006864A0 /* TileStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileStack.m; sourceTree = "<group>"; };
-		B624ACE41A582D0B006864A0 /* harvest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = harvest.png; sourceTree = "<group>"; };
 		B6437E431A5981070000E8E7 /* MapTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapTile.h; sourceTree = "<group>"; };
 		B6437E441A5981070000E8E7 /* MapTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTile.m; sourceTree = "<group>"; };
-		B6437E471A59D1340000E8E7 /* backpack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backpack.png; sourceTree = "<group>"; };
-		B6437E4D1A5A08E90000E8E7 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		B64603EC1A51845000EC66DF /* farm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = farm.json; path = Tiled/farm.json; sourceTree = "<group>"; };
 		B64603EE1A5184BF00EC66DF /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Tiled/background.png; sourceTree = "<group>"; };
-		B64603EF1A5184BF00EC66DF /* farm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = farm; path = Tiled/farm; sourceTree = "<group>"; };
-		B64603F41A518AAE00EC66DF /* knight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = knight.png; path = Tiled/knight.png; sourceTree = "<group>"; };
 		B64975971A75E401003D5C8E /* PlayerEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerEntity.h; sourceTree = "<group>"; };
 		B64975981A75E401003D5C8E /* PlayerEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerEntity.m; sourceTree = "<group>"; };
 		B649759D1A75E402003D5C8E /* PlantEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlantEntity.h; sourceTree = "<group>"; };
@@ -229,9 +200,6 @@
 		B66796381A79E8EC0051FFCD /* AnalogSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalogSpriteNode.m; sourceTree = "<group>"; };
 		B67FB82B1A538C69000B488F /* PlayerAnimatedSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerAnimatedSpriteNode.h; sourceTree = "<group>"; };
 		B67FB82C1A538C69000B488F /* PlayerAnimatedSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerAnimatedSpriteNode.m; sourceTree = "<group>"; };
-		B67FB82E1A5393C7000B488F /* joystic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystic.png; sourceTree = "<group>"; };
-		B67FB8321A5396C1000B488F /* joystic_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystic_background.png; sourceTree = "<group>"; };
-		B67FB83E1A54CEF1000B488F /* outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outline.png; sourceTree = "<group>"; };
 		B67FC46A1A712CFD00CD5876 /* background.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = background.atlas; sourceTree = "<group>"; };
 		B6825C4C193A069D000449FA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		B6837DA519194CEB00D5B30C /* MapNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapNode.h; sourceTree = "<group>"; };
@@ -253,6 +221,10 @@
 		B690F6C01A982B1900E0D300 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/SpriteKit.framework; sourceTree = DEVELOPER_DIR; };
 		B690F6C21A982B2100E0D300 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		B690F6C41A982BC900E0D300 /* MacStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MacStoryboard.storyboard; sourceTree = "<group>"; };
+		B6B1D6BD1AB0FFD80038C992 /* FoodStandNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodStandNode.h; sourceTree = "<group>"; };
+		B6B1D6BE1AB0FFD80038C992 /* FoodStandNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodStandNode.m; sourceTree = "<group>"; };
+		B6B1D6C01AB109D70038C992 /* DragItemButtonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragItemButtonSprite.h; sourceTree = "<group>"; };
+		B6B1D6C11AB109D70038C992 /* DragItemButtonSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragItemButtonSprite.m; sourceTree = "<group>"; };
 		B6BDDA161A7551380041DFA1 /* house.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = house.atlas; sourceTree = "<group>"; };
 		B6C88E881A6550020003F116 /* farm.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = farm.tmx; path = Tiled/farm.tmx; sourceTree = "<group>"; };
 		B6C88E891A6550020003F116 /* house.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = house.json; path = Tiled/house.json; sourceTree = "<group>"; };
@@ -260,7 +232,8 @@
 		B6C88E8B1A6550020003F116 /* house.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = house.tmx; path = Tiled/house.tmx; sourceTree = "<group>"; };
 		B6C8B0601A9049D200369F35 /* InventoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InventoryController.h; sourceTree = "<group>"; };
 		B6C8B0611A9049D200369F35 /* InventoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InventoryController.m; sourceTree = "<group>"; };
-		B6C8B0631A90632C00369F35 /* dialogBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialogBackground.png; sourceTree = "<group>"; };
+		B6CF46001AB4851E0096EB01 /* hud.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = hud.atlas; sourceTree = "<group>"; };
+		B6CF46021AB4863C0096EB01 /* knight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knight.png; sourceTree = "<group>"; };
 		B6D688171A7FB04100FD3184 /* basic_watering_can_gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basic_watering_can_gear.png; sourceTree = "<group>"; };
 		B6D688191A80665300FD3184 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		B6D688581A82DFA500FD3184 /* ItemButtonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemButtonSprite.h; sourceTree = "<group>"; };
@@ -283,14 +256,10 @@
 		B6DAA5211A5EB17000E0DB61 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B6DAA5231A5EB37400E0DB61 /* items.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = items.sqlite3; sourceTree = "<group>"; };
 		B6DAA52C1A60AD6700E0DB61 /* basic_sword_gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basic_sword_gear.png; sourceTree = "<group>"; };
-		B6DAA5301A60B4DF00E0DB61 /* secondary_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = secondary_background.png; sourceTree = "<group>"; };
-		B6DAA5321A60B62100E0DB61 /* primary_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = primary_background.png; sourceTree = "<group>"; };
-		B6DAA5341A60B7D100E0DB61 /* unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unknown.png; sourceTree = "<group>"; };
 		B6DDE29E1A8846A8000D3BE6 /* MapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapManager.h; sourceTree = "<group>"; };
 		B6DDE29F1A8846A8000D3BE6 /* MapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapManager.m; sourceTree = "<group>"; };
 		B6DDE2A11A884783000D3BE6 /* HouseMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseMap.h; sourceTree = "<group>"; };
 		B6DDE2A21A884783000D3BE6 /* HouseMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseMap.m; sourceTree = "<group>"; };
-		B6DDE2DA1A88E191000D3BE6 /* sleep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sleep.png; sourceTree = "<group>"; };
 		B6DDE2DC1A88E387000D3BE6 /* TimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeManager.h; sourceTree = "<group>"; };
 		B6DDE2DD1A88E387000D3BE6 /* TimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeManager.m; sourceTree = "<group>"; };
 		B6DDE2DF1A89B63B000D3BE6 /* text.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = text.atlas; sourceTree = "<group>"; };
@@ -336,32 +305,14 @@
 		B6437E461A59D1180000E8E7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B6CF46001AB4851E0096EB01 /* hud.atlas */,
 				B6DDE2DF1A89B63B000D3BE6 /* text.atlas */,
 				B6D6885D1A846F8100FD3184 /* items.atlas */,
 				B6D6885C1A846B6500FD3184 /* sprite maps */,
-				B6D6885B1A83A11500FD3184 /* gear */,
 				B6BDDA161A7551380041DFA1 /* house.atlas */,
 				B67FC46A1A712CFD00CD5876 /* background.atlas */,
-				B6437E4B1A5A08CD0000E8E7 /* UI */,
 			);
 			name = Images;
-			sourceTree = "<group>";
-		};
-		B6437E4B1A5A08CD0000E8E7 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				B6558A851A5AB77200628C37 /* Hud */,
-				B6437E4C1A5A08D40000E8E7 /* EquipmentView */,
-			);
-			name = UI;
-			sourceTree = "<group>";
-		};
-		B6437E4C1A5A08D40000E8E7 /* EquipmentView */ = {
-			isa = PBXGroup;
-			children = (
-				B6437E4D1A5A08E90000E8E7 /* player.png */,
-			);
-			name = EquipmentView;
 			sourceTree = "<group>";
 		};
 		B64C78841914781C00A2D065 = {
@@ -453,23 +404,6 @@
 			name = Storyboard;
 			sourceTree = "<group>";
 		};
-		B6558A851A5AB77200628C37 /* Hud */ = {
-			isa = PBXGroup;
-			children = (
-				B61228F91A9B587B002C3D4E /* select_outline.png */,
-				B6DDE2DA1A88E191000D3BE6 /* sleep.png */,
-				B6DAA5341A60B7D100E0DB61 /* unknown.png */,
-				B6DAA5321A60B62100E0DB61 /* primary_background.png */,
-				B6DAA5301A60B4DF00E0DB61 /* secondary_background.png */,
-				B624ACE41A582D0B006864A0 /* harvest.png */,
-				B67FB8321A5396C1000B488F /* joystic_background.png */,
-				B67FB82E1A5393C7000B488F /* joystic.png */,
-				B67FB83E1A54CEF1000B488F /* outline.png */,
-				B6437E471A59D1340000E8E7 /* backpack.png */,
-			);
-			name = Hud;
-			sourceTree = "<group>";
-		};
 		B6825C4E193A1FC4000449FA /* Maps */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +432,8 @@
 		B6825C50193A1FDE000449FA /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				B6B1D6BD1AB0FFD80038C992 /* FoodStandNode.h */,
+				B6B1D6BE1AB0FFD80038C992 /* FoodStandNode.m */,
 				B6DDE2E11A89B6FB000D3BE6 /* TextNode.h */,
 				B6DDE2E21A89B6FB000D3BE6 /* TextNode.m */,
 				B6825C4E193A1FC4000449FA /* Maps */,
@@ -505,6 +441,8 @@
 				B64A2D0A1A7916A4006C2406 /* ButtonSprite.m */,
 				B66796371A79E8EC0051FFCD /* AnalogSpriteNode.h */,
 				B66796381A79E8EC0051FFCD /* AnalogSpriteNode.m */,
+				B6B1D6C01AB109D70038C992 /* DragItemButtonSprite.h */,
+				B6B1D6C11AB109D70038C992 /* DragItemButtonSprite.m */,
 				B6D688581A82DFA500FD3184 /* ItemButtonSprite.h */,
 				B6D688591A82DFA500FD3184 /* ItemButtonSprite.m */,
 				B64C78D11914787500A2D065 /* AnimatedSpriteNode.h */,
@@ -523,7 +461,6 @@
 				B6C88E8A1A6550020003F116 /* house.png */,
 				B6C88E8B1A6550020003F116 /* house.tmx */,
 				B64603EE1A5184BF00EC66DF /* background.png */,
-				B64603EF1A5184BF00EC66DF /* farm */,
 				B64603EC1A51845000EC66DF /* farm.json */,
 			);
 			name = Tiled;
@@ -558,7 +495,6 @@
 			children = (
 				B6C8B0601A9049D200369F35 /* InventoryController.h */,
 				B6C8B0611A9049D200369F35 /* InventoryController.m */,
-				B6C8B0631A90632C00369F35 /* dialogBackground.png */,
 				B6D85EA51A67E8FD00E73066 /* Core Data */,
 				B6DAA5261A5F717800E0DB61 /* Model Objects */,
 				B6DAA5251A5F716400E0DB61 /* Managers */,
@@ -571,19 +507,12 @@
 			path = SpriteKitGame;
 			sourceTree = "<group>";
 		};
-		B6D6885B1A83A11500FD3184 /* gear */ = {
-			isa = PBXGroup;
-			children = (
-				B6D688171A7FB04100FD3184 /* basic_watering_can_gear.png */,
-				B6DAA52C1A60AD6700E0DB61 /* basic_sword_gear.png */,
-			);
-			name = gear;
-			sourceTree = "<group>";
-		};
 		B6D6885C1A846B6500FD3184 /* sprite maps */ = {
 			isa = PBXGroup;
 			children = (
-				B64603F41A518AAE00EC66DF /* knight.png */,
+				B6CF46021AB4863C0096EB01 /* knight.png */,
+				B6D688171A7FB04100FD3184 /* basic_watering_can_gear.png */,
+				B6DAA52C1A60AD6700E0DB61 /* basic_sword_gear.png */,
 			);
 			name = "sprite maps";
 			sourceTree = "<group>";
@@ -744,33 +673,21 @@
 				B6DDE2E01A89B63B000D3BE6 /* text.atlas in Resources */,
 				B64603F01A5184BF00EC66DF /* background.png in Resources */,
 				B64C78B31914781C00A2D065 /* Images.xcassets in Resources */,
+				B6CF46011AB4851E0096EB01 /* hud.atlas in Resources */,
 				B6D6881A1A80665300FD3184 /* View.xib in Resources */,
-				B6DAA5311A60B4DF00E0DB61 /* secondary_background.png in Resources */,
-				B67FB8301A5393C7000B488F /* joystic.png in Resources */,
 				B6C88E8C1A6550020003F116 /* farm.tmx in Resources */,
-				B67FB8401A54CEF1000B488F /* outline.png in Resources */,
 				B6D6885E1A846F8100FD3184 /* items.atlas in Resources */,
-				B64603F51A518AAE00EC66DF /* knight.png in Resources */,
-				B64603F11A5184BF00EC66DF /* farm in Resources */,
 				B64603ED1A51845000EC66DF /* farm.json in Resources */,
 				B64C78A91914781C00A2D065 /* Main_iPad.storyboard in Resources */,
+				B6CF46031AB4863C0096EB01 /* knight.png in Resources */,
 				B64C78A61914781C00A2D065 /* Main_iPhone.storyboard in Resources */,
-				B6437E4F1A5A08E90000E8E7 /* player.png in Resources */,
 				B6C88E8D1A6550020003F116 /* house.json in Resources */,
-				B6DAA5331A60B62100E0DB61 /* primary_background.png in Resources */,
-				B6437E491A59D1340000E8E7 /* backpack.png in Resources */,
-				B67FB8341A5396C1000B488F /* joystic_background.png in Resources */,
 				B6C88E8E1A6550020003F116 /* house.png in Resources */,
 				B6825C4D193A069D000449FA /* README.md in Resources */,
-				B6C8B0641A90632C00369F35 /* dialogBackground.png in Resources */,
-				B6DAA5351A60B7D100E0DB61 /* unknown.png in Resources */,
 				B6BDDA171A7551380041DFA1 /* house.atlas in Resources */,
 				B67FC46B1A712CFD00CD5876 /* background.atlas in Resources */,
-				B6DDE2DB1A88E191000D3BE6 /* sleep.png in Resources */,
-				B624ACE51A582D0B006864A0 /* harvest.png in Resources */,
 				B6D688181A7FB04100FD3184 /* basic_watering_can_gear.png in Resources */,
 				B64C789D1914781C00A2D065 /* InfoPlist.strings in Resources */,
-				B61228FA1A9B587B002C3D4E /* select_outline.png in Resources */,
 				B6DAA52E1A60AD6700E0DB61 /* basic_sword_gear.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -781,30 +698,17 @@
 			files = (
 				B690F6621A9822B100E0D300 /* text.atlas in Resources */,
 				B690F6661A9822C300E0D300 /* basic_sword_gear.png in Resources */,
-				B690F66C1A9822D600E0D300 /* secondary_background.png in Resources */,
 				B690F67C1A98230A00E0D300 /* View.xib in Resources */,
-				B690F6641A9822BA00E0D300 /* knight.png in Resources */,
 				B690F6371A98220D00E0D300 /* Images.xcassets in Resources */,
 				B690F6791A9822F500E0D300 /* background.png in Resources */,
-				B690F64E1A98225800E0D300 /* dialogBackground.png in Resources */,
 				B690F6C51A982BC900E0D300 /* MacStoryboard.storyboard in Resources */,
-				B690F6691A9822D600E0D300 /* sleep.png in Resources */,
 				B690F6771A9822F500E0D300 /* house.json in Resources */,
-				B690F66F1A9822D600E0D300 /* joystic.png in Resources */,
-				B690F66A1A9822D600E0D300 /* unknown.png in Resources */,
-				B61228FC1A9B5A2B002C3D4E /* select_outline.png in Resources */,
-				B690F66D1A9822D600E0D300 /* harvest.png in Resources */,
-				B690F6721A9822DB00E0D300 /* player.png in Resources */,
-				B690F6711A9822D600E0D300 /* backpack.png in Resources */,
 				B690F6651A9822C300E0D300 /* basic_watering_can_gear.png in Resources */,
 				B690F6781A9822F500E0D300 /* house.png in Resources */,
-				B690F66B1A9822D600E0D300 /* primary_background.png in Resources */,
 				B690F67A1A9822F500E0D300 /* farm.json in Resources */,
-				B690F66E1A9822D600E0D300 /* joystic_background.png in Resources */,
 				B690F6631A9822B400E0D300 /* items.atlas in Resources */,
 				B690F6611A9822AE00E0D300 /* items.sqlite3 in Resources */,
 				B690F6671A9822CA00E0D300 /* house.atlas in Resources */,
-				B690F6701A9822D600E0D300 /* outline.png in Resources */,
 				B690F6681A9822CE00E0D300 /* background.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -836,7 +740,9 @@
 				B64C78AC1914781C00A2D065 /* GameViewController.m in Sources */,
 				B6D6885A1A82DFA500FD3184 /* ItemButtonSprite.m in Sources */,
 				B62477741A708960003DC066 /* ItemSprite.m in Sources */,
+				B6B1D6BF1AB0FFD80038C992 /* FoodStandNode.m in Sources */,
 				B64C78A31914781C00A2D065 /* AppDelegate.m in Sources */,
+				B6B1D6C21AB109D70038C992 /* DragItemButtonSprite.m in Sources */,
 				B61228F81A9A1589002C3D4E /* AnimatedItem.m in Sources */,
 				B6DDE2DE1A88E387000D3BE6 /* TimeManager.m in Sources */,
 				B64D71F41A9DF9AF004C2F79 /* Dialog.m in Sources */,

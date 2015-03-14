@@ -16,6 +16,7 @@
 #import "MapManager.h"
 #import "TimeManager.h"
 #import "TextNode.h"
+#import "FoodStandNode.h"
 
 @interface MyScene ()<MapDelegate, ButtonSpriteDelegate, TextNodeDelegate, MapNodeDelegate>
 
@@ -52,6 +53,8 @@
 @property (nonatomic, strong)TextNode *textNode;
 
 @property (nonatomic)CGPoint velocity;
+
+@property (nonatomic, strong)FoodStandNode *foodStandNode;
 
 @end
 
@@ -175,7 +178,7 @@
     [self.hudNode addChild:self.healthBar];
     
     self.hudNode.zPosition = 10;
-
+   
 }
 
 -(SKTexture *)getTextureForName:(NSString *)name
@@ -570,6 +573,15 @@
 -(void)doneWithProjectile:(Item *)projectile atPoint:(CGPoint)point
 {
     [self.map doneWithProjectile:projectile atPoint:point];
+}
+
+-(void)showFoodStand
+{
+    
+    self.foodStandNode = [[FoodStandNode alloc]initWithSize:self.size withPlayer:self.map.player];
+    
+    [self addChild:self.foodStandNode];
+
 }
 
 #pragma mark - TextNodeDelegate

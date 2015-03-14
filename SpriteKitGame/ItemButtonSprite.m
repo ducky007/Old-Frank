@@ -22,9 +22,9 @@
     
     if (item)
     {
-        SKSpriteNode *itemSprite = [SKSpriteNode spriteNodeWithImageNamed:item.itemName];
+        self.itemSprite = [SKSpriteNode spriteNodeWithImageNamed:item.itemName];
         self.userInteractionEnabled = YES;
-        [self addChild:itemSprite];
+        [self addChild:self.itemSprite];
         
         if (item.quantity > 1)
         {
@@ -51,8 +51,8 @@
             leftNode.position = CGPointMake(rightNode.position.x-leftNode.size.width/2-rightNode.size.width/2, rightNode.position.y);
 
 
-            [self addChild:leftNode];
-            [self addChild:rightNode];
+            [self.itemSprite addChild:leftNode];
+            [self.itemSprite addChild:rightNode];
         }
 
     }

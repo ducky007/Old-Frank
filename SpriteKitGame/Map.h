@@ -29,6 +29,7 @@ typedef NS_ENUM(NSUInteger, ActionButtonType) {
 -(void)loadMapWithName:(NSString *)mapName;
 -(void)displayDialog:(Dialog *)dialog withBlock:(DialogBlock)completion;
 -(void)launchProjectile:(Item *)projectile fromPoint:(CGPoint)startPoint toPoint:(CGPoint)point;
+-(void)showFoodStand;
 
 @end
 
