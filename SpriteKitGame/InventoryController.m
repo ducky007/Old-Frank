@@ -9,6 +9,7 @@
 #import "InventoryController.h"
 #import "ButtonSprite.h"
 #import "ItemButtonSprite.h"
+#import "TextureLoader.h"
 
 @interface InventoryController ()<ButtonSpriteDelegate, ItemButtonSpriteDelegate>
 
@@ -25,6 +26,7 @@
 @property (nonatomic)CGSize size;
 
 @property (nonatomic, strong)NSMutableArray *inventoryButtons;
+@property (nonatomic, strong)TextureLoader *textureLoader;
 
 @end
 
@@ -33,6 +35,8 @@
 -(id)initWithSize:(CGSize)size andPlayer:(Player *)player
 {
     self = [super init];
+    
+    self.textureLoader = [[TextureLoader alloc]init];
     
     self.size = size;
     
@@ -50,11 +54,11 @@
     self.playerSprite.position = CGPointMake(size.width-self.playerSprite.size.width*2, size.height/2);
     [self.inventorySpriteView addChild:self.playerSprite];
     
-    SKSpriteNode *outline = [SKSpriteNode spriteNodeWithImageNamed:@"outline"];
+    SKSpriteNode *outline = [SKSpriteNode spriteNodeWithTexture:[self.textureLoader getTextureForName:@"outline"]];
     outline.position = CGPointMake(self.playerSprite.position.x, size.height/2-self.playerSprite.size.height/2-outline.size.width/2-10);
     [self.inventorySpriteView addChild:outline];
     
-    outline = [SKSpriteNode spriteNodeWithImageNamed:@"outline"];
+    outline = [SKSpriteNode spriteNodeWithTexture:[self.textureLoader getTextureForName:@"outline"]];
     outline.position = CGPointMake(self.playerSprite.position.x, size.height/2+self.playerSprite.size.height/2+outline.size.width/2+10);
     [self.inventorySpriteView addChild:outline];
     
@@ -125,7 +129,7 @@
     
     while (y > -self.inventoryItemContainer.size.height)
     {
-        SKSpriteNode *outline = [SKSpriteNode spriteNodeWithImageNamed:@"outline"];
+        SKSpriteNode *outline = [SKSpriteNode spriteNodeWithTexture:[self.textureLoader getTextureForName:@"outline"]];
         
         outline.position = CGPointMake(x+outline.size.width/2, y -outline.size.height/2);
         

@@ -17,6 +17,7 @@
 #import "TimeManager.h"
 #import "TextNode.h"
 #import "FoodStandNode.h"
+#import "TextureLoader.h"
 
 @interface MyScene ()<MapDelegate, ButtonSpriteDelegate, TextNodeDelegate, MapNodeDelegate>
 
@@ -48,13 +49,13 @@
 
 @property (nonatomic)BOOL transitioning;
 
-@property (nonatomic, strong)NSMutableDictionary *textures;
-
 @property (nonatomic, strong)TextNode *textNode;
 
 @property (nonatomic)CGPoint velocity;
 
 @property (nonatomic, strong)FoodStandNode *foodStandNode;
+
+@property (nonatomic, strong)TextureLoader *textureLoader;
 
 @end
 
@@ -64,7 +65,8 @@
 
 -(void)didMoveToView:(SKView *)view
 {
-    self.textures = [[NSMutableDictionary alloc]init];
+
+    self.textureLoader = [[TextureLoader alloc]init];
     
     self.physicsWorld.gravity = CGVectorMake(0, 0);
     
@@ -103,7 +105,7 @@
     [self.hudNode addChild:self.nightHud];
     
 
-    self.primaryButton = [[ButtonSprite alloc]initWithTexture:[self getTextureForName:@"primary_background"]];
+    self.primaryButton = [[ButtonSprite alloc]initWithTexture:[self.textureLoader getTextureForName:@"primary_background"]];
     self.primaryButton.delegate = self;
     self.primaryButton.anchorPoint = CGPointMake(0, 0);
     self.primaryButton.position  = CGPointMake(self.scene.size.width-self.primaryButton.size.width-10, 10);// 100;
@@ -119,7 +121,7 @@
 
     [self.primaryButton addChild:self.primaryButtonOverlay];
     
-    self.actionButton = [[ButtonSprite alloc]initWithTexture:[self getTextureForName:@"secondary_background"]];
+    self.actionButton = [[ButtonSprite alloc]initWithTexture:[self.textureLoader getTextureForName:@"secondary_background"]];
     self.actionButton.delegate = self;
     self.actionButton.anchorPoint = CGPointMake(0, 0);
     self.actionButton.position  = CGPointMake(self.scene.size.width-self.actionButton.size.width-10, self.primaryButton.size.height+10);// 100;
@@ -180,22 +182,6 @@
     self.hudNode.zPosition = 10;
    
 }
-
--(SKTexture *)getTextureForName:(NSString *)name
-{
-    
-    SKTexture *texture = self.textures[name];
-    
-    if (!texture)
-    {
-        texture = [SKTexture textureWithImageNamed:name];
-        texture.filteringMode = SKTextureFilteringNearest;
-        [self.textures setObject:texture forKey:name];
-    }
-    
-    return texture;
-}
-
 
 -(void)primaryButtonPressed
 {
@@ -352,7 +338,7 @@
     
     if (self.map.player.equippedTool)
     {
-        self.primaryButtonOverlay.texture = [self getTextureForName:self.map.player.equippedTool.itemName];
+        self.primaryButtonOverlay.texture = [self.textureLoader getTextureForName:self.map.player.equippedTool.itemName];
     }
     else
     {
@@ -420,17 +406,17 @@
             break;
             
         case ActionButtonTypeHarvest:
-            self.actionButtonOverlay.texture = [self getTextureForName:@"harvest"];
+            self.actionButtonOverlay.texture = [self.textureLoader getTextureForName:@"harvest"];
             break;
         
         case ActionButtonTypeSleep:
-            self.actionButtonOverlay.texture = [self getTextureForName:@"sleep"];
+            self.actionButtonOverlay.texture = [self.textureLoader getTextureForName:@"sleep"];
             break;
         case ActionButtonTypeOpen:
-            self.actionButtonOverlay.texture = [self getTextureForName:@"unknown"];
+            self.actionButtonOverlay.texture = [self.textureLoader getTextureForName:@"unknown"];
             break;
         case ActionButtonTypeTalk:
-            self.actionButtonOverlay.texture = [self getTextureForName:@"unknown"];
+            self.actionButtonOverlay.texture = [self.textureLoader getTextureForName:@"unknown"];
             break;
             
             
@@ -440,7 +426,7 @@
     
     if (self.map.actionButtonType == ActionButtonTypeNone && self.map.player.equippedItem)
     {
-        self.actionButtonOverlay.texture = [self getTextureForName:self.map.player.equippedItem.itemName];
+        self.actionButtonOverlay.texture = [self.textureLoader getTextureForName:self.map.player.equippedItem.itemName];
     }
    
     

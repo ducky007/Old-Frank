@@ -9,14 +9,16 @@
 #import "FoodStandNode.h"
 #import "ButtonSprite.h"
 #import "DragItemButtonSprite.h"
+#import "TextureLoader.h"
 
 @interface FoodStandNode ()<ItemButtonSpriteDelegate, ButtonSpriteDelegate>
 
-@property (nonatomic, strong)NSMutableDictionary *textures;
 @property (nonatomic, strong)SKSpriteNode *inventoryItemContainer;
 @property (nonatomic, strong)Player *player;
 @property (nonatomic, strong)NSMutableArray *inventoryButtons;
 @property (nonatomic, strong)ButtonSprite *closeButtonSprite;
+
+@property (nonatomic, strong)TextureLoader *textureLoader;
 
 
 @end
@@ -26,6 +28,8 @@
 -(id)initWithSize:(CGSize)size withPlayer:(Player *)player;
 {
     self = [super init];
+
+    self.textureLoader = [[TextureLoader alloc]init];
     
     self.zPosition = 20;
     self.player = player;
@@ -39,20 +43,20 @@
     NSInteger positionY = 0;
     
     
-    SKSpriteNode *foodStandSprite = [SKSpriteNode spriteNodeWithTexture:[self getTextureForName:@"foodstand_1"]];
+    SKSpriteNode *foodStandSprite = [SKSpriteNode spriteNodeWithTexture:[self.textureLoader getTextureForName:@"foodstand_1"]];
     foodStandSprite.position = CGPointMake(positionX, positionY);
     [self addChild:foodStandSprite];
     
     positionX += foodStandSprite.size.width;
     
-    foodStandSprite = [SKSpriteNode spriteNodeWithTexture:[self getTextureForName:@"foodstand_2"]];
+    foodStandSprite = [SKSpriteNode spriteNodeWithTexture:[self.textureLoader getTextureForName:@"foodstand_2"]];
     foodStandSprite.position = CGPointMake(positionX, positionY);
     [self addChild:foodStandSprite];
     
     positionX += foodStandSprite.size.width;
 
     
-    foodStandSprite = [SKSpriteNode spriteNodeWithTexture:[self getTextureForName:@"foodstand_3"]];
+    foodStandSprite = [SKSpriteNode spriteNodeWithTexture:[self.textureLoader getTextureForName:@"foodstand_3"]];
     foodStandSprite.position = CGPointMake(positionX, positionY);
     [self addChild:foodStandSprite];
     
@@ -60,20 +64,20 @@
     positionY -= foodStandSprite.size.height;
 
     
-    foodStandSprite = [SKSpriteNode spriteNodeWithTexture:[self getTextureForName:@"foodstand_4"]];
+    foodStandSprite = [SKSpriteNode spriteNodeWithTexture:[self.textureLoader getTextureForName:@"foodstand_4"]];
     foodStandSprite.position = CGPointMake(positionX, positionY);
     [self addChild:foodStandSprite];
     
     positionX += foodStandSprite.size.width;
 
     
-    foodStandSprite = [SKSpriteNode spriteNodeWithTexture:[self getTextureForName:@"foodstand_5"]];
+    foodStandSprite = [SKSpriteNode spriteNodeWithTexture:[self.textureLoader getTextureForName:@"foodstand_5"]];
     foodStandSprite.position = CGPointMake(positionX, positionY);
     [self addChild:foodStandSprite];
     
     positionX += foodStandSprite.size.width;
     
-    foodStandSprite = [SKSpriteNode spriteNodeWithTexture:[self getTextureForName:@"foodstand_6"]];
+    foodStandSprite = [SKSpriteNode spriteNodeWithTexture:[self.textureLoader getTextureForName:@"foodstand_6"]];
     foodStandSprite.position = CGPointMake(positionX, positionY);
     [self addChild:foodStandSprite];
     
@@ -139,7 +143,7 @@
     
     while (y > -self.inventoryItemContainer.size.height)
     {
-        SKSpriteNode *outline = [SKSpriteNode spriteNodeWithImageNamed:@"outline"];
+        SKSpriteNode *outline = [SKSpriteNode spriteNodeWithTexture:[self.textureLoader getTextureForName:@"outline"]];
         
         outline.position = CGPointMake(x+outline.size.width/2, y -outline.size.height/2);
         
@@ -154,22 +158,6 @@
         }
     }
     
-}
-
-
--(SKTexture *)getTextureForName:(NSString *)name
-{
-    
-    SKTexture *texture = self.textures[name];
-    
-    if (!texture)
-    {
-        texture = [SKTexture textureWithImageNamed:name];
-        texture.filteringMode = SKTextureFilteringNearest;
-        [self.textures setObject:texture forKey:name];
-    }
-    
-    return texture;
 }
 
 -(void)itemButtonSpritePressed:(ItemButtonSprite *)itemButtonSprite

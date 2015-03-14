@@ -7,9 +7,11 @@
 //
 
 #import "ItemButtonSprite.h"
+#import "TextureLoader.h"
 
 @interface ItemButtonSprite ()
 
+@property (nonatomic, strong)TextureLoader *textureLoader;
 
 @end
 
@@ -17,12 +19,18 @@
 
 -(id)initWithItem:(Item *)item
 {
-    self = [super initWithImageNamed:@"outline"];
+    
+    self = [super init];
+    self.textureLoader = [[TextureLoader alloc]init];
+    
+    self.texture = [self.textureLoader getTextureForName:@"outline"];
+    self.size = self.texture.size;
+    
     self.item = item;
     
     if (item)
     {
-        self.itemSprite = [SKSpriteNode spriteNodeWithImageNamed:item.itemName];
+        self.itemSprite = [SKSpriteNode spriteNodeWithTexture:[self.textureLoader getTextureForName:item.itemName]];
         self.userInteractionEnabled = YES;
         [self addChild:self.itemSprite];
         

@@ -8,10 +8,9 @@
 
 #import "TextNode.h"
 #import "ButtonSprite.h"
+#import "TextureLoader.h"
 
 @interface TextNode ()<ButtonSpriteDelegate>
-
-@property (nonatomic, strong)NSMutableDictionary *textures;
 
 @property (nonatomic, strong)NSArray *letters;
 
@@ -26,6 +25,7 @@
 @property (nonatomic, strong)ButtonSprite *contButton;
 
 @property (nonatomic, strong)NSDictionary *imageDictionary;
+@property (nonatomic, strong)TextureLoader *textureLoader;
 
 @end
 
@@ -34,6 +34,7 @@
 -(id)initWithSize:(CGSize)size withDialog:(Dialog *)dialog
 {
     self = [super init];
+    self.textureLoader = [[TextureLoader alloc]init];
     
     self.dialog = dialog;
     self.size = size;
@@ -208,7 +209,7 @@
         {
             NSString *tmp_str = [word substringWithRange:NSMakeRange(i, 1)];
             
-            SKTexture *texture = [self getTextureForName:self.imageDictionary[tmp_str]];
+            SKTexture *texture = [self.textureLoader getTextureForName:self.imageDictionary[tmp_str]];
             SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:texture];
             sprite.anchorPoint = CGPointMake(0, 0);
             sprite.size = CGSizeMake(sprite.size.width * 2, sprite.size.height * 2);
@@ -262,7 +263,7 @@
     {
         NSString *tmp_str = [word substringWithRange:NSMakeRange(i, 1)];
         
-        SKTexture *texture = [self getTextureForName:self.imageDictionary[tmp_str]];
+        SKTexture *texture = [self.textureLoader getTextureForName:self.imageDictionary[tmp_str]];
         SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:texture];
         sprite.anchorPoint = CGPointMake(0, 0);
         sprite.size = CGSizeMake(sprite.size.width * 2, sprite.size.height * 2);
@@ -304,21 +305,6 @@
             [self performSelector:@selector(revealLetterWithDelay:) withObject:delay afterDelay:waitDelay];
         }
     }
-}
-
--(SKTexture *)getTextureForName:(NSString *)name
-{
-    
-    SKTexture *texture = self.textures[name];
-    
-    if (!texture)
-    {
-        texture = [SKTexture textureWithImageNamed:name];
-        texture.filteringMode = SKTextureFilteringNearest;
-        [self.textures setObject:texture forKey:name];
-    }
-    
-    return texture;
 }
 
 -(void)buttonSpritePressed:(ButtonSprite *)buttonSprite
