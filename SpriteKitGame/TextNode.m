@@ -38,11 +38,8 @@
     
     self.dialog = dialog;
     self.size = size;
-    
-    SKTexture *texture = [SKTexture textureWithImageNamed:@"dialogBackground"];
-    texture.filteringMode = SKTextureFilteringNearest;
 
-    self.background = [SKSpriteNode spriteNodeWithTexture:texture];
+    self.background = [SKSpriteNode spriteNodeWithTexture:[self.textureLoader getTextureForName:@"dialogBackground"]];
     self.background.centerRect = CGRectMake(.4, .4, .2, .2);
 
     self.background.anchorPoint = CGPointMake(.5, 0);

@@ -7,6 +7,7 @@
 //
 
 #import "AnimatedSpriteNode.h"
+#import "SMDTextureLoader.h"
 
 @interface AnimatedSpriteNode ()
 
@@ -14,6 +15,7 @@
 @property (nonatomic, strong)NSArray *walkLeft;
 @property (nonatomic, strong)NSArray *walkUp;
 @property (nonatomic, strong)NSArray *walkDown;
+@property (nonatomic, strong)SMDTextureLoader *textureLoader;
 
 @end
 
@@ -26,6 +28,7 @@
     
     if (self)
     {
+        self.textureLoader = [[SMDTextureLoader alloc]init];
         self.rows = height;
         self.columns = width;
         
@@ -70,7 +73,28 @@
         
         self.walkingArray = @[self.walkUp, self.walkDown, self.walkLeft, self.walkRight];
         
-        self.texture = self.walkRight[0];
+        NSMutableArray *walkingTexture = [[NSMutableArray alloc]init];
+        
+        for (NSInteger i = 0; i < 4; i++)
+        {
+            SKTexture *texture = [self.textureLoader getTextureForName:[NSString stringWithFormat:@"frank_walk_left_%@", @(i+1)]];
+            [walkingTexture addObject:texture];
+        }
+        
+        self.walkingArray = @[walkingTexture, self.walkingArray[1], walkingTexture, self.walkingArray[3]];
+        
+        walkingTexture = [[NSMutableArray alloc]init];
+        
+        for (NSInteger i = 0; i < 4; i++)
+        {
+            SKTexture *texture = [self.textureLoader getTextureForName:[NSString stringWithFormat:@"frank_walk_right_%@", @(i+1)]];
+            [walkingTexture addObject:texture];
+        }
+        
+        self.walkingArray = @[self.walkingArray[0], walkingTexture, self.walkingArray[2], walkingTexture];
+
+        
+        self.texture = self.walkingArray[0][0];
         self.size = self.texture.size;
         //NSLog(@"Size: %@", NSStringFromCGSize(self.size));
 

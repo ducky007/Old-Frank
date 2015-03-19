@@ -13,14 +13,11 @@
 #import "MapEntity.h"
 #import "SMDCoreDataHelper.h"
 #import "MapTile.h"
-#import "ItemManager.h"
 #import "ItemEntity.h"
 #import "MapTriggerEntity.h"
 #import "TimeManager.h"
 
 @interface Map ()
-
-@property (nonatomic, strong)NSArray *farmPlots;
 
 @property (nonatomic, strong)NSArray *mapTriggers;
 
@@ -172,6 +169,11 @@
     
     self.mapTriggers = mapTriggers;
     self.farmPlots = farmPlots;
+    
+    if(mapEntity.food_stand)
+    {
+        self.foodStand = [[FoodStand alloc]initWithEntity:mapEntity.food_stand];
+    }
     
     NSLog(@"done");
     
@@ -357,6 +359,31 @@
                     mapEntity.start_y = @(self.playerStart.y);
                     
                 }
+                else if (properties[@"special_object_type"])
+                {
+                    if ([properties[@"special_object_type"] isEqualToString:@"food_stand"])
+                    {
+                        NSLog(@"Here River: %@", objectDictionary);
+                        
+                        x = [objectDictionary[@"x"] integerValue]/self.tileWidth;
+                        y = self.mapHeight - [objectDictionary[@"y"] integerValue]/self.tileWidth-1;
+                        
+                        self.foodStand = [[FoodStand alloc]init];
+                        
+                        FoodStandEntity *foodStandEntity = [[SMDCoreDataHelper sharedHelper]createNewEntity:@"FoodStandEntity"];
+                        foodStandEntity.map = mapEntity;
+                        foodStandEntity.item_1_index_x = @(x);
+                        foodStandEntity.item_1_index_y = @(y);
+                        foodStandEntity.item_2_index_x = @(x+1);
+                        foodStandEntity.item_2_index_y = @(y);
+                        foodStandEntity.item_3_index_x = @(x+2);
+                        foodStandEntity.item_3_index_y = @(y);
+                        
+                        self.foodStand.foodStandEntity = foodStandEntity;
+                        
+                        NSLog(@"X: %@ Y: %@", @(x), @(y));
+                    }
+                }
             }
         }
     }
@@ -364,17 +391,7 @@
     self.mapTriggers = mapTriggers;
     self.farmPlots = farmPlots;
     
-    if (self.addObjects)
-    {
-        [self addRandomSeedBag];
-        [self addRandomObjects];
-        [self addRandomObjects];
-        [self addRandomObjects];
-        [self addRandomObjects];
-        [self addRandomObjects];
-        [self addRandomObjects];
-    }
-    
+       
     //don't to save until after done setting up
     for (NSInteger i = 0; i < self.mapWidth; i++)
     {
@@ -567,57 +584,6 @@
     }
 }
 
-
--(void)addRandomObjects
-{
-    NSArray *objectArray = @[@"rose", @"",@"stump", @"",@"stump",@"weed",@"weed",@"weed",@"",@"",@"small_rock",@"small_rock",@"medium_rock",@"medium_rock", @"large_rock", @"", @"", @"large_rock", @"", @"", @"", @"", @"", @"", @"", @"bag_of_gold"];
-    
-    for (TileStack *tileStack in self.farmPlots)
-    {
-        if (!tileStack.isTilled && !tileStack.objectItem)
-        {
-            NSInteger random = arc4random() % objectArray.count;
-            NSString *randomItemName = objectArray[random];
-            
-            if (randomItemName.length)
-            {
-                Item *item = [[ItemManager sharedManager]getItem:randomItemName];
-                tileStack.objectItem = item;
-            }
-        }
-    }
-}
-
--(void)addRandomSeedBag
-{
-    for (NSInteger i = 0; i < 2; i++)
-    {
-        Item *seeds;
-        
-        while (!seeds)
-        {
-            NSInteger randomX = arc4random() % self.mapWidth;
-            NSInteger randomY = arc4random() % self.mapHeight;
-            TileStack *tileStack = self.mapTiles[randomX][randomY];
-            
-            if (!tileStack.objectItem)
-            {
-                seeds = [[ItemManager sharedManager]getItem:@"corn_seeds"];
-                tileStack.objectItem = seeds;
-                
-                CGPoint index = CGPointMake(tileStack.indexX, tileStack.indexY);
-
-            #if TARGET_OS_IPHONE
-                [self.dirtyIndexes addObject:[NSValue valueWithCGPoint:index]];
-            #else
-                [self.dirtyIndexes addObject:[NSValue valueWithPoint:index]];
-            #endif
-            
-            }
-        }
-    }
-}
-
 -(MapIndex)indexForPositionCGPoint:(CGPoint)point
 {
     NSInteger x = ((point.x+self.tileWidth/2)/self.tileWidth);
@@ -632,21 +598,7 @@
 
 -(void)updateForNewDay
 {
-    for (TileStack *tileStack in self.farmPlots)
-    {
-        [tileStack updateForNewDay];
-        
-        CGPoint index = CGPointMake(tileStack.indexX, tileStack.indexY);
-
-        #if TARGET_OS_IPHONE
-        [self.dirtyIndexes addObject:[NSValue valueWithCGPoint:index]];
-        #else
-        [self.dirtyIndexes addObject:[NSValue valueWithPoint:index]];
-        #endif
-    }
-    
-    [self addRandomObjects];
-    [self addRandomSeedBag];
+   //base class method
 }
 
 -(TileStack *)tileStackForPlayer:(Player *)player
@@ -804,15 +756,9 @@
         }
         else if (self.actionButtonType == ActionButtonTypeOpen && tileStack.objectItem.itemType == ItemTypeFoodstand)
         {
-            [self.delegate showFoodStand];
-            
-//            [self.delegate displayDialog:[DialogManager getDialogWithDialogName:DialogNameFoodStand] withBlock:^(DialogResponse response) {
-//            }];
+            [self.delegate showFoodStand:self.foodStand];
         }
     }
-
-    
-    
    
 }
 

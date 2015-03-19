@@ -10,6 +10,8 @@
 #import "Player.h"
 #import "TileStack.h"
 #import "DialogManager.h"
+#import "ItemManager.h"
+#import "FoodStand.h"
 
 typedef struct {
     NSInteger x;
@@ -29,7 +31,7 @@ typedef NS_ENUM(NSUInteger, ActionButtonType) {
 -(void)loadMapWithName:(NSString *)mapName;
 -(void)displayDialog:(Dialog *)dialog withBlock:(DialogBlock)completion;
 -(void)launchProjectile:(Item *)projectile fromPoint:(CGPoint)startPoint toPoint:(CGPoint)point;
--(void)showFoodStand;
+-(void)showFoodStand:(FoodStand *)foodStand;
 
 @end
 
@@ -52,6 +54,8 @@ typedef NS_ENUM(NSUInteger, ActionButtonType) {
 @property (nonatomic)ActionButtonType actionButtonType;
 
 @property (nonatomic, strong)NSMutableArray *dirtyIndexes;
+@property (nonatomic, strong)NSArray *farmPlots;
+@property (nonatomic, strong)FoodStand *foodStand;
 
 @property (weak)id <MapDelegate> delegate;
 
@@ -64,6 +68,7 @@ typedef NS_ENUM(NSUInteger, ActionButtonType) {
 -(void)actionButtonPressedForPlayer:(Player *)player;
 
 -(void)doneWithProjectile:(Item *)projectile atPoint:(CGPoint)point;
+
 
 -(TileStack *)tileStackForPlayer:(Player *)player;
 

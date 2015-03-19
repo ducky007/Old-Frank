@@ -47,8 +47,7 @@
     self.inventorySpriteView.zPosition = 30000;
     self.player = player;
     
-    SKTexture *playerTexture = [SKTexture textureWithImageNamed:@"player"];
-    playerTexture.filteringMode = SKTextureFilteringNearest;
+    SKTexture *playerTexture = [self.textureLoader getTextureForName:@"player"];
 
     self.playerSprite = [SKSpriteNode spriteNodeWithTexture:playerTexture];
     self.playerSprite.position = CGPointMake(size.width-self.playerSprite.size.width*2, size.height/2);
@@ -115,7 +114,7 @@
         
         if (i == self.selectedIndex)
         {
-            SKTexture *texture = [SKTexture textureWithImageNamed:@"select_outline"];
+            SKTexture *texture = [self.textureLoader getTextureForName:@"select_outline"];
             texture.filteringMode = SKTextureFilteringNearest;
             itemButtonSprite.texture = texture;
         }

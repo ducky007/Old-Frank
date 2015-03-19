@@ -156,11 +156,14 @@
     
     NSLog(@"Done");
 
-    SKTexture *texture = [SKTexture textureWithImageNamed:@"outline"];
-    texture.filteringMode = SKTextureFilteringNearest;
-    self.outlineSprite = [SKSpriteNode spriteNodeWithTexture:texture];
+    self.outlineSprite = [SKSpriteNode spriteNodeWithTexture:[self.textureLoader getTextureForName:@"outline"]];
     self.outlineSprite.zPosition = 3;
     [self addChild:self.outlineSprite];
+    
+    if (map.foodStand)
+    {
+        [self updateFoodStand:map.foodStand];
+    }
 }
 
 -(void)update
@@ -229,6 +232,41 @@
         }
         
         tileStackNode.foregroundItemSprite = itemSprite;
+    }
+}
+
+-(void)updateFoodStand:(FoodStand *)foodStand
+{
+    NSInteger x = [foodStand.foodStandEntity.item_1_index_x integerValue];
+    NSInteger y = [foodStand.foodStandEntity.item_1_index_y integerValue];
+    
+    for (NSInteger i = 0; i < 3; i++)
+    {
+        TileStackNode *tileStackNode = self.tileStackNodes[x+i][y];
+        SKSpriteNode *objectSprite = tileStackNode.objectItemSprite;
+        
+        //removing old sprites
+        for (SKSpriteNode *sprite in objectSprite.children)
+        {
+            [sprite removeFromParent];
+        }
+    }
+    
+    NSInteger index = 0;
+    
+    for (Item *item in foodStand.items)
+    {
+        TileStackNode *tileStackNode = self.tileStackNodes[x+index][y];
+        SKSpriteNode *objectSprite = tileStackNode.objectItemSprite;
+        
+        SKSpriteNode *itemSprite = [[ItemSprite alloc]initWithTexture:[self.textureLoader getTextureForName:item.itemName]];
+        itemSprite.name = item.itemName;
+        itemSprite.zPosition = 1;
+        [objectSprite addChild:itemSprite];
+        
+        [tileStackNode.backgroundItemSprite removeFromParent];
+
+        index++;
     }
 }
 

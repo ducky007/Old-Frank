@@ -166,10 +166,24 @@
                  "width":28.7206,
                  "x":625.326,
                  "y":1643.6
+                }, 
+                {
+                 "height":61.8046971569838,
+                 "name":"",
+                 "properties":
+                    {
+                     "special_object_type":"food_stand"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":94.5248309459755,
+                 "x":192.68523231295,
+                 "y":2112.99352868465
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "width":0,
          "x":0,
          "y":0

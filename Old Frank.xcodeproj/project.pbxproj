@@ -19,8 +19,6 @@
 		B64975991A75E401003D5C8E /* PlayerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975981A75E401003D5C8E /* PlayerEntity.m */; };
 		B649759F1A75E402003D5C8E /* PlantEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B649759E1A75E402003D5C8E /* PlantEntity.m */; };
 		B64975A21A75E402003D5C8E /* TileStackEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975A11A75E402003D5C8E /* TileStackEntity.m */; };
-		B64975A51A75E402003D5C8E /* ItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975A41A75E402003D5C8E /* ItemEntity.m */; };
-		B64975AE1A75E752003D5C8E /* MapEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975AD1A75E752003D5C8E /* MapEntity.m */; };
 		B64975B11A75E752003D5C8E /* MapTriggerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975B01A75E752003D5C8E /* MapTriggerEntity.m */; };
 		B64A2D0B1A7916A4006C2406 /* ButtonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B64A2D0A1A7916A4006C2406 /* ButtonSprite.m */; };
 		B64C78911914781C00A2D065 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B64C78901914781C00A2D065 /* Foundation.framework */; };
@@ -42,6 +40,8 @@
 		B6558A8B1A5ABCE600628C37 /* PlantManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B6558A8A1A5ABCE600628C37 /* PlantManager.m */; };
 		B6558A901A5B874200628C37 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = B6558A8F1A5B874200628C37 /* Player.m */; };
 		B66796391A79E8EC0051FFCD /* AnalogSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B66796381A79E8EC0051FFCD /* AnalogSpriteNode.m */; };
+		B67264A31AB5B948001A1EE0 /* frank.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B67264A21AB5B948001A1EE0 /* frank.atlas */; };
+		B67264A41AB5B948001A1EE0 /* frank.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B67264A21AB5B948001A1EE0 /* frank.atlas */; };
 		B67FB82D1A538C69000B488F /* PlayerAnimatedSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B67FB82C1A538C69000B488F /* PlayerAnimatedSpriteNode.m */; };
 		B67FC46B1A712CFD00CD5876 /* background.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B67FC46A1A712CFD00CD5876 /* background.atlas */; };
 		B6825C4D193A069D000449FA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B6825C4C193A069D000449FA /* README.md */; };
@@ -52,8 +52,6 @@
 		B690F6371A98220D00E0D300 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B690F6361A98220D00E0D300 /* Images.xcassets */; };
 		B690F64D1A98224E00E0D300 /* TextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DDE2E21A89B6FB000D3BE6 /* TextNode.m */; };
 		B690F64F1A98226C00E0D300 /* MapTriggerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975B01A75E752003D5C8E /* MapTriggerEntity.m */; };
-		B690F6501A98226F00E0D300 /* MapEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975AD1A75E752003D5C8E /* MapEntity.m */; };
-		B690F6511A98227200E0D300 /* ItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975A41A75E402003D5C8E /* ItemEntity.m */; };
 		B690F6521A98227600E0D300 /* TileStackEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975A11A75E402003D5C8E /* TileStackEntity.m */; };
 		B690F6531A98227900E0D300 /* PlantEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B649759E1A75E402003D5C8E /* PlantEntity.m */; };
 		B690F6541A98227C00E0D300 /* PlayerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975981A75E401003D5C8E /* PlayerEntity.m */; };
@@ -102,9 +100,13 @@
 		B690F6C31A982B2100E0D300 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B690F6C21A982B2100E0D300 /* Foundation.framework */; };
 		B690F6C51A982BC900E0D300 /* MacStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B690F6C41A982BC900E0D300 /* MacStoryboard.storyboard */; };
 		B690F6C61A9832BE00E0D300 /* oldfrank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6D85EA21A67416B00E73066 /* oldfrank.xcdatamodeld */; };
-		B6B1D6BF1AB0FFD80038C992 /* FoodStandNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B1D6BE1AB0FFD80038C992 /* FoodStandNode.m */; };
+		B6B1D6BF1AB0FFD80038C992 /* FoodStandController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B1D6BE1AB0FFD80038C992 /* FoodStandController.m */; };
 		B6B1D6C21AB109D70038C992 /* DragItemButtonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B1D6C11AB109D70038C992 /* DragItemButtonSprite.m */; };
 		B6BDDA171A7551380041DFA1 /* house.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B6BDDA161A7551380041DFA1 /* house.atlas */; };
+		B6C7EC621ABA6FB2001290D4 /* FoodStandEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7EC611ABA6FB2001290D4 /* FoodStandEntity.m */; };
+		B6C7EC631ABA6FB2001290D4 /* FoodStandEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7EC611ABA6FB2001290D4 /* FoodStandEntity.m */; };
+		B6C7EC661ABA6FB3001290D4 /* MapEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7EC651ABA6FB3001290D4 /* MapEntity.m */; };
+		B6C7EC671ABA6FB3001290D4 /* MapEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7EC651ABA6FB3001290D4 /* MapEntity.m */; };
 		B6C88E8C1A6550020003F116 /* farm.tmx in Resources */ = {isa = PBXBuildFile; fileRef = B6C88E881A6550020003F116 /* farm.tmx */; };
 		B6C88E8D1A6550020003F116 /* house.json in Resources */ = {isa = PBXBuildFile; fileRef = B6C88E891A6550020003F116 /* house.json */; };
 		B6C88E8E1A6550020003F116 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C88E8A1A6550020003F116 /* house.png */; };
@@ -114,6 +116,13 @@
 		B6CF46031AB4863C0096EB01 /* knight.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CF46021AB4863C0096EB01 /* knight.png */; };
 		B6CF46061AB487DC0096EB01 /* SMDTextureLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF46051AB487DC0096EB01 /* SMDTextureLoader.m */; };
 		B6CF46071AB488480096EB01 /* SMDTextureLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF46051AB487DC0096EB01 /* SMDTextureLoader.m */; };
+		B6CF46101AB4A0B10096EB01 /* ItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF460F1AB4A0B10096EB01 /* ItemEntity.m */; };
+		B6CF46111AB4A0B10096EB01 /* ItemEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF460F1AB4A0B10096EB01 /* ItemEntity.m */; };
+		B6CF46151AB4A1140096EB01 /* FoodStand.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF46141AB4A1140096EB01 /* FoodStand.m */; };
+		B6CF46161AB4A1140096EB01 /* FoodStand.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF46141AB4A1140096EB01 /* FoodStand.m */; };
+		B6CF46171AB4B34A0096EB01 /* FoodStandController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B1D6BE1AB0FFD80038C992 /* FoodStandController.m */; };
+		B6CF461A1AB4CEF30096EB01 /* FarmMap.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF46191AB4CEF30096EB01 /* FarmMap.m */; };
+		B6CF461B1AB4CEF30096EB01 /* FarmMap.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CF46191AB4CEF30096EB01 /* FarmMap.m */; };
 		B6D688181A7FB04100FD3184 /* basic_watering_can_gear.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D688171A7FB04100FD3184 /* basic_watering_can_gear.png */; };
 		B6D6881A1A80665300FD3184 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D688191A80665300FD3184 /* View.xib */; };
 		B6D6885A1A82DFA500FD3184 /* ItemButtonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D688591A82DFA500FD3184 /* ItemButtonSprite.m */; };
@@ -159,10 +168,6 @@
 		B649759E1A75E402003D5C8E /* PlantEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlantEntity.m; sourceTree = "<group>"; };
 		B64975A01A75E402003D5C8E /* TileStackEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileStackEntity.h; sourceTree = "<group>"; };
 		B64975A11A75E402003D5C8E /* TileStackEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileStackEntity.m; sourceTree = "<group>"; };
-		B64975A31A75E402003D5C8E /* ItemEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemEntity.h; sourceTree = "<group>"; };
-		B64975A41A75E402003D5C8E /* ItemEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemEntity.m; sourceTree = "<group>"; };
-		B64975AC1A75E752003D5C8E /* MapEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapEntity.h; sourceTree = "<group>"; };
-		B64975AD1A75E752003D5C8E /* MapEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapEntity.m; sourceTree = "<group>"; };
 		B64975AF1A75E752003D5C8E /* MapTriggerEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapTriggerEntity.h; sourceTree = "<group>"; };
 		B64975B01A75E752003D5C8E /* MapTriggerEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTriggerEntity.m; sourceTree = "<group>"; };
 		B64A2D091A7916A4006C2406 /* ButtonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonSprite.h; sourceTree = "<group>"; };
@@ -200,6 +205,7 @@
 		B6558A8F1A5B874200628C37 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		B66796371A79E8EC0051FFCD /* AnalogSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalogSpriteNode.h; sourceTree = "<group>"; };
 		B66796381A79E8EC0051FFCD /* AnalogSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalogSpriteNode.m; sourceTree = "<group>"; };
+		B67264A21AB5B948001A1EE0 /* frank.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = frank.atlas; sourceTree = "<group>"; };
 		B67FB82B1A538C69000B488F /* PlayerAnimatedSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerAnimatedSpriteNode.h; sourceTree = "<group>"; };
 		B67FB82C1A538C69000B488F /* PlayerAnimatedSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerAnimatedSpriteNode.m; sourceTree = "<group>"; };
 		B67FC46A1A712CFD00CD5876 /* background.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = background.atlas; sourceTree = "<group>"; };
@@ -223,11 +229,15 @@
 		B690F6C01A982B1900E0D300 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/SpriteKit.framework; sourceTree = DEVELOPER_DIR; };
 		B690F6C21A982B2100E0D300 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		B690F6C41A982BC900E0D300 /* MacStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MacStoryboard.storyboard; sourceTree = "<group>"; };
-		B6B1D6BD1AB0FFD80038C992 /* FoodStandNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodStandNode.h; sourceTree = "<group>"; };
-		B6B1D6BE1AB0FFD80038C992 /* FoodStandNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodStandNode.m; sourceTree = "<group>"; };
+		B6B1D6BD1AB0FFD80038C992 /* FoodStandController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodStandController.h; sourceTree = "<group>"; };
+		B6B1D6BE1AB0FFD80038C992 /* FoodStandController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodStandController.m; sourceTree = "<group>"; };
 		B6B1D6C01AB109D70038C992 /* DragItemButtonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragItemButtonSprite.h; sourceTree = "<group>"; };
 		B6B1D6C11AB109D70038C992 /* DragItemButtonSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragItemButtonSprite.m; sourceTree = "<group>"; };
 		B6BDDA161A7551380041DFA1 /* house.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = house.atlas; sourceTree = "<group>"; };
+		B6C7EC601ABA6FB2001290D4 /* FoodStandEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodStandEntity.h; sourceTree = "<group>"; };
+		B6C7EC611ABA6FB2001290D4 /* FoodStandEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodStandEntity.m; sourceTree = "<group>"; };
+		B6C7EC641ABA6FB3001290D4 /* MapEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapEntity.h; sourceTree = "<group>"; };
+		B6C7EC651ABA6FB3001290D4 /* MapEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapEntity.m; sourceTree = "<group>"; };
 		B6C88E881A6550020003F116 /* farm.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = farm.tmx; path = Tiled/farm.tmx; sourceTree = "<group>"; };
 		B6C88E891A6550020003F116 /* house.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = house.json; path = Tiled/house.json; sourceTree = "<group>"; };
 		B6C88E8A1A6550020003F116 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = house.png; path = Tiled/house.png; sourceTree = "<group>"; };
@@ -238,6 +248,13 @@
 		B6CF46021AB4863C0096EB01 /* knight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knight.png; sourceTree = "<group>"; };
 		B6CF46041AB487DC0096EB01 /* SMDTextureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMDTextureLoader.h; sourceTree = "<group>"; };
 		B6CF46051AB487DC0096EB01 /* SMDTextureLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMDTextureLoader.m; sourceTree = "<group>"; };
+		B6CF460A1AB49FBC0096EB01 /* oldfrank 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "oldfrank 2.xcdatamodel"; sourceTree = "<group>"; };
+		B6CF460E1AB4A0B00096EB01 /* ItemEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemEntity.h; sourceTree = "<group>"; };
+		B6CF460F1AB4A0B10096EB01 /* ItemEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemEntity.m; sourceTree = "<group>"; };
+		B6CF46131AB4A1140096EB01 /* FoodStand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodStand.h; sourceTree = "<group>"; };
+		B6CF46141AB4A1140096EB01 /* FoodStand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodStand.m; sourceTree = "<group>"; };
+		B6CF46181AB4CEF30096EB01 /* FarmMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FarmMap.h; sourceTree = "<group>"; };
+		B6CF46191AB4CEF30096EB01 /* FarmMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FarmMap.m; sourceTree = "<group>"; };
 		B6D688171A7FB04100FD3184 /* basic_watering_can_gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basic_watering_can_gear.png; sourceTree = "<group>"; };
 		B6D688191A80665300FD3184 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		B6D688581A82DFA500FD3184 /* ItemButtonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemButtonSprite.h; sourceTree = "<group>"; };
@@ -309,6 +326,7 @@
 		B6437E461A59D1180000E8E7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B67264A21AB5B948001A1EE0 /* frank.atlas */,
 				B6CF46001AB4851E0096EB01 /* hud.atlas */,
 				B6DDE2DF1A89B63B000D3BE6 /* text.atlas */,
 				B6D6885D1A846F8100FD3184 /* items.atlas */,
@@ -436,8 +454,6 @@
 		B6825C50193A1FDE000449FA /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
-				B6B1D6BD1AB0FFD80038C992 /* FoodStandNode.h */,
-				B6B1D6BE1AB0FFD80038C992 /* FoodStandNode.m */,
 				B6DDE2E11A89B6FB000D3BE6 /* TextNode.h */,
 				B6DDE2E21A89B6FB000D3BE6 /* TextNode.m */,
 				B6825C4E193A1FC4000449FA /* Maps */,
@@ -497,20 +513,40 @@
 		B690F6C71A98341E00E0D300 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				B6CF46041AB487DC0096EB01 /* SMDTextureLoader.h */,
-				B6CF46051AB487DC0096EB01 /* SMDTextureLoader.m */,
-				B6C8B0601A9049D200369F35 /* InventoryController.h */,
-				B6C8B0611A9049D200369F35 /* InventoryController.m */,
+				B6CF46081AB49DCF0096EB01 /* Helpers */,
+				B6CF46091AB49DEC0096EB01 /* Controlers */,
 				B6D85EA51A67E8FD00E73066 /* Core Data */,
 				B6DAA5261A5F717800E0DB61 /* Model Objects */,
 				B6DAA5251A5F716400E0DB61 /* Managers */,
 				B6437E461A59D1180000E8E7 /* Images */,
-				B6825C4F193A1FD5000449FA /* Scene */,
 				B6D688191A80665300FD3184 /* View.xib */,
 				B6825C50193A1FDE000449FA /* Sprites */,
 			);
 			name = Shared;
 			path = SpriteKitGame;
+			sourceTree = "<group>";
+		};
+		B6CF46081AB49DCF0096EB01 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B6CF46041AB487DC0096EB01 /* SMDTextureLoader.h */,
+				B6CF46051AB487DC0096EB01 /* SMDTextureLoader.m */,
+				B6D85E9C1A673EF000E73066 /* SMDCoreDataHelper.h */,
+				B6D85E9D1A673EF000E73066 /* SMDCoreDataHelper.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		B6CF46091AB49DEC0096EB01 /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				B6825C4F193A1FD5000449FA /* Scene */,
+				B6C8B0601A9049D200369F35 /* InventoryController.h */,
+				B6C8B0611A9049D200369F35 /* InventoryController.m */,
+				B6B1D6BD1AB0FFD80038C992 /* FoodStandController.h */,
+				B6B1D6BE1AB0FFD80038C992 /* FoodStandController.m */,
+			);
+			name = Controlers;
 			sourceTree = "<group>";
 		};
 		B6D6885C1A846B6500FD3184 /* sprite maps */ = {
@@ -526,12 +562,12 @@
 		B6D85EA51A67E8FD00E73066 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				B6C7EC641ABA6FB3001290D4 /* MapEntity.h */,
+				B6C7EC651ABA6FB3001290D4 /* MapEntity.m */,
+				B6C7EC601ABA6FB2001290D4 /* FoodStandEntity.h */,
+				B6C7EC611ABA6FB2001290D4 /* FoodStandEntity.m */,
 				B64975AF1A75E752003D5C8E /* MapTriggerEntity.h */,
 				B64975B01A75E752003D5C8E /* MapTriggerEntity.m */,
-				B64975AC1A75E752003D5C8E /* MapEntity.h */,
-				B64975AD1A75E752003D5C8E /* MapEntity.m */,
-				B64975A31A75E402003D5C8E /* ItemEntity.h */,
-				B64975A41A75E402003D5C8E /* ItemEntity.m */,
 				B64975A01A75E402003D5C8E /* TileStackEntity.h */,
 				B64975A11A75E402003D5C8E /* TileStackEntity.m */,
 				B649759D1A75E402003D5C8E /* PlantEntity.h */,
@@ -539,8 +575,8 @@
 				B64975971A75E401003D5C8E /* PlayerEntity.h */,
 				B64975981A75E401003D5C8E /* PlayerEntity.m */,
 				B6D85EA21A67416B00E73066 /* oldfrank.xcdatamodeld */,
-				B6D85E9C1A673EF000E73066 /* SMDCoreDataHelper.h */,
-				B6D85E9D1A673EF000E73066 /* SMDCoreDataHelper.m */,
+				B6CF460E1AB4A0B00096EB01 /* ItemEntity.h */,
+				B6CF460F1AB4A0B10096EB01 /* ItemEntity.m */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -579,6 +615,8 @@
 				B624ACE21A55D7E1006864A0 /* TileStack.m */,
 				B64D71F21A9DF9AF004C2F79 /* Dialog.h */,
 				B64D71F31A9DF9AF004C2F79 /* Dialog.m */,
+				B6CF46131AB4A1140096EB01 /* FoodStand.h */,
+				B6CF46141AB4A1140096EB01 /* FoodStand.m */,
 			);
 			name = "Model Objects";
 			sourceTree = "<group>";
@@ -590,6 +628,8 @@
 				B6D85ED61A68D43800E73066 /* Map.m */,
 				B6D85E991A6609F800E73066 /* MapTrigger.h */,
 				B6D85E9A1A6609F800E73066 /* MapTrigger.m */,
+				B6CF46181AB4CEF30096EB01 /* FarmMap.h */,
+				B6CF46191AB4CEF30096EB01 /* FarmMap.m */,
 				B6DDE2A11A884783000D3BE6 /* HouseMap.h */,
 				B6DDE2A21A884783000D3BE6 /* HouseMap.m */,
 			);
@@ -688,6 +728,7 @@
 				B6CF46031AB4863C0096EB01 /* knight.png in Resources */,
 				B64C78A61914781C00A2D065 /* Main_iPhone.storyboard in Resources */,
 				B6C88E8D1A6550020003F116 /* house.json in Resources */,
+				B67264A31AB5B948001A1EE0 /* frank.atlas in Resources */,
 				B6C88E8E1A6550020003F116 /* house.png in Resources */,
 				B6825C4D193A069D000449FA /* README.md in Resources */,
 				B6BDDA171A7551380041DFA1 /* house.atlas in Resources */,
@@ -702,6 +743,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B67264A41AB5B948001A1EE0 /* frank.atlas in Resources */,
 				B690F6621A9822B100E0D300 /* text.atlas in Resources */,
 				B690F6661A9822C300E0D300 /* basic_sword_gear.png in Resources */,
 				B690F67C1A98230A00E0D300 /* View.xib in Resources */,
@@ -736,18 +778,21 @@
 				B64975A21A75E402003D5C8E /* TileStackEntity.m in Sources */,
 				B6558A901A5B874200628C37 /* Player.m in Sources */,
 				B6DDE2E31A89B6FB000D3BE6 /* TextNode.m in Sources */,
+				B6C7EC661ABA6FB3001290D4 /* MapEntity.m in Sources */,
 				B6558A8B1A5ABCE600628C37 /* PlantManager.m in Sources */,
 				B624ACE31A55D7E1006864A0 /* TileStack.m in Sources */,
 				B6C8B0621A9049D200369F35 /* InventoryController.m in Sources */,
 				B64D71F11A9DF7E5004C2F79 /* DialogManager.m in Sources */,
 				B6D85E9E1A673EF000E73066 /* SMDCoreDataHelper.m in Sources */,
 				B6437E451A5981070000E8E7 /* MapTile.m in Sources */,
+				B6CF46151AB4A1140096EB01 /* FoodStand.m in Sources */,
 				B6D85ED71A68D43800E73066 /* Map.m in Sources */,
 				B64C78AC1914781C00A2D065 /* GameViewController.m in Sources */,
 				B6D6885A1A82DFA500FD3184 /* ItemButtonSprite.m in Sources */,
 				B62477741A708960003DC066 /* ItemSprite.m in Sources */,
-				B6B1D6BF1AB0FFD80038C992 /* FoodStandNode.m in Sources */,
+				B6B1D6BF1AB0FFD80038C992 /* FoodStandController.m in Sources */,
 				B64C78A31914781C00A2D065 /* AppDelegate.m in Sources */,
+				B6C7EC621ABA6FB2001290D4 /* FoodStandEntity.m in Sources */,
 				B6B1D6C21AB109D70038C992 /* DragItemButtonSprite.m in Sources */,
 				B61228F81A9A1589002C3D4E /* AnimatedItem.m in Sources */,
 				B6DDE2DE1A88E387000D3BE6 /* TimeManager.m in Sources */,
@@ -757,12 +802,12 @@
 				B67FB82D1A538C69000B488F /* PlayerAnimatedSpriteNode.m in Sources */,
 				B6D85EA41A67416B00E73066 /* oldfrank.xcdatamodeld in Sources */,
 				B64975991A75E401003D5C8E /* PlayerEntity.m in Sources */,
-				B64975AE1A75E752003D5C8E /* MapEntity.m in Sources */,
 				B624776E1A7087A8003DC066 /* TileStackNode.m in Sources */,
-				B64975A51A75E402003D5C8E /* ItemEntity.m in Sources */,
 				B649759F1A75E402003D5C8E /* PlantEntity.m in Sources */,
 				B64C789F1914781C00A2D065 /* main.m in Sources */,
+				B6CF461A1AB4CEF30096EB01 /* FarmMap.m in Sources */,
 				B64A2D0B1A7916A4006C2406 /* ButtonSprite.m in Sources */,
+				B6CF46101AB4A0B10096EB01 /* ItemEntity.m in Sources */,
 				B6DAA5191A5E10EC00E0DB61 /* Item.m in Sources */,
 				B64975B11A75E752003D5C8E /* MapTriggerEntity.m in Sources */,
 				B66796391A79E8EC0051FFCD /* AnalogSpriteNode.m in Sources */,
@@ -780,20 +825,23 @@
 				B690F65D1A9822A100E0D300 /* TimeManager.m in Sources */,
 				B690F6331A98220C00E0D300 /* GameViewController.m in Sources */,
 				B690F64D1A98224E00E0D300 /* TextNode.m in Sources */,
+				B6CF46161AB4A1140096EB01 /* FoodStand.m in Sources */,
 				B690F6521A98227600E0D300 /* TileStackEntity.m in Sources */,
 				B690F6C61A9832BE00E0D300 /* oldfrank.xcdatamodeld in Sources */,
-				B690F6511A98227200E0D300 /* ItemEntity.m in Sources */,
 				B690F6601A9822AB00E0D300 /* ItemManager.m in Sources */,
 				B690F62D1A98220C00E0D300 /* main.m in Sources */,
 				B690F6821A98233D00E0D300 /* InventoryController.m in Sources */,
 				B6EDCB571AA1FA3F00964612 /* DialogManager.m in Sources */,
 				B690F6581A98228F00E0D300 /* HouseMap.m in Sources */,
 				B690F6541A98227C00E0D300 /* PlayerEntity.m in Sources */,
+				B6CF46111AB4A0B10096EB01 /* ItemEntity.m in Sources */,
 				B690F67B1A98230500E0D300 /* MyScene.m in Sources */,
 				B690F65C1A98229D00E0D300 /* TileStack.m in Sources */,
 				B690F6801A98232D00E0D300 /* AnimatedSpriteNode.m in Sources */,
 				B690F6531A98227900E0D300 /* PlantEntity.m in Sources */,
 				B690F65A1A98229600E0D300 /* Plant.m in Sources */,
+				B6C7EC631ABA6FB2001290D4 /* FoodStandEntity.m in Sources */,
+				B6CF46171AB4B34A0096EB01 /* FoodStandController.m in Sources */,
 				B61228FB1A9B5A0D002C3D4E /* AnimatedItem.m in Sources */,
 				B690F64F1A98226C00E0D300 /* MapTriggerEntity.m in Sources */,
 				B6EDCB581AA1FA4E00964612 /* Dialog.m in Sources */,
@@ -805,11 +853,12 @@
 				B690F6551A98228200E0D300 /* SMDCoreDataHelper.m in Sources */,
 				B6CF46071AB488480096EB01 /* SMDTextureLoader.m in Sources */,
 				B690F67F1A98232D00E0D300 /* ItemButtonSprite.m in Sources */,
+				B6C7EC671ABA6FB3001290D4 /* MapEntity.m in Sources */,
 				B690F65E1A9822A400E0D300 /* MapManager.m in Sources */,
 				B690F6561A98228900E0D300 /* Map.m in Sources */,
 				B690F6751A9822E800E0D300 /* TileStackNode.m in Sources */,
 				B690F62B1A98220C00E0D300 /* AppDelegate.m in Sources */,
-				B690F6501A98226F00E0D300 /* MapEntity.m in Sources */,
+				B6CF461B1AB4CEF30096EB01 /* FarmMap.m in Sources */,
 				B690F6571A98228C00E0D300 /* MapTrigger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1032,9 +1081,10 @@
 		B6D85EA21A67416B00E73066 /* oldfrank.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B6CF460A1AB49FBC0096EB01 /* oldfrank 2.xcdatamodel */,
 				B6D85EA31A67416B00E73066 /* oldfrank.xcdatamodel */,
 			);
-			currentVersion = B6D85EA31A67416B00E73066 /* oldfrank.xcdatamodel */;
+			currentVersion = B6CF460A1AB49FBC0096EB01 /* oldfrank 2.xcdatamodel */;
 			name = oldfrank.xcdatamodeld;
 			path = ../oldfrank.xcdatamodeld;
 			sourceTree = "<group>";

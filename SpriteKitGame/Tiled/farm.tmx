@@ -317,7 +317,7 @@
    eJzt2rkKwlAURdGopVqq/6KlQ+dQOAvO//8NHkgdOBLJzYt7wekeeNmFjWYZACDSpeT+Ca18tPLRykcrH618tPLRykcrH618tPLRykcrAAAAAACAZmtpbWOdqANrpKv1jPWjDqwRWvlo5aOVr6pWTfhdILJVar1o5RtoQ2Ojkp/ThFZVoZWPVt+hEfAbY20SfUQCptpMm2uLgjd8h+eW2kpba5uCN7TKHbSjdtLOBW9olXtoT+2lvYNvQbr476WPVj5a+Wjlo5WPVj5a+WjloxUAoMm22k7bRx+SgKt20+7BdwAAAKTmA46qjGY=
   </data>
  </layer>
- <objectgroup name="Object Layer 1" visible="0">
+ <objectgroup name="Object Layer 1">
   <object x="200.404" y="1039.3" width="334.007" height="259.438"/>
   <object x="577.803" y="1599.32" width="38.8605" height="31.3807"/>
   <object x="663.456" y="1598.88" width="33.337" height="31.9623"/>
@@ -334,6 +334,11 @@
   <object x="625.326" y="1643.6" width="28.7206" height="26.98">
    <properties>
     <property name="playerStart" value="true"/>
+   </properties>
+  </object>
+  <object x="192.685" y="2112.99" width="94.5248" height="61.8047">
+   <properties>
+    <property name="special_object_type" value="food_stand"/>
    </properties>
   </object>
  </objectgroup>

@@ -39,8 +39,8 @@
             NSInteger leftDigit = item.quantity/10;
             NSInteger rightDigit = item.quantity-(leftDigit *10);
             
-            SKTexture *rightTexture = [SKTexture textureWithImageNamed:[NSString stringWithFormat:@"num%@", @(rightDigit)]];
-            SKTexture *leftTexture = [SKTexture textureWithImageNamed:[NSString stringWithFormat:@"num%@", @(leftDigit)]];
+            SKTexture *rightTexture = [self.textureLoader getTextureForName:[NSString stringWithFormat:@"num%@", @(rightDigit)]];
+            SKTexture *leftTexture = [self.textureLoader getTextureForName:[NSString stringWithFormat:@"num%@", @(leftDigit)]];
             
             rightTexture.filteringMode = SKTextureFilteringNearest;
             leftTexture.filteringMode = SKTextureFilteringNearest;

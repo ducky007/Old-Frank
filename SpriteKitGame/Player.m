@@ -31,7 +31,8 @@ static inline CGPoint rwMult(CGPoint a, float b) {
     self.width = 30;
     self.height = 60;
     self.rows = 4;
-    self.columns = 2;
+    self.columns = 4;
+//    self.columns = 2;
    
     if (players.count == 1)
     {
@@ -252,7 +253,7 @@ static inline CGPoint rwMult(CGPoint a, float b) {
     }
     else
     {
-        self.frameIndex = 0;
+        self.frameIndex = 1;
         self.isMoving = NO;
         return;
     }
@@ -285,7 +286,9 @@ static inline CGPoint rwMult(CGPoint a, float b) {
     
     if (self.frameTimer > self.frameTimerMax)
     {
-        self.frameIndex = (self.frameIndex + 1) % 2;
+        self.frameIndex = (self.frameIndex + 1) % 4;
+//        self.frameIndex = (self.frameIndex + 1) % 2;
+
         self.frameTimer = 0;
     }
 
@@ -373,6 +376,20 @@ static inline CGPoint rwMult(CGPoint a, float b) {
     }
     
     self.position = rwAdd(self.position, self.moveVelocity);
+}
+
+-(void)addItemToInventory:(Item *)item
+{
+    [self.inventory addObject:item];
+    item.itemEntity.player_inventory = self.playerEntity;
+    [[SMDCoreDataHelper sharedHelper]save];
+}
+
+-(void)removeItemToInventory:(Item *)item
+{
+    [self.inventory removeObject:item];
+    item.itemEntity.player_inventory = nil;
+    [[SMDCoreDataHelper sharedHelper]save];
 }
 
 @end

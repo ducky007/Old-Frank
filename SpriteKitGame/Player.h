@@ -59,4 +59,7 @@ typedef NS_ENUM(NSUInteger, Direction) {
 
 -(void)removeItem;
 
+-(void)addItemToInventory:(Item *)item;
+-(void)removeItemToInventory:(Item *)item;
+
 @end

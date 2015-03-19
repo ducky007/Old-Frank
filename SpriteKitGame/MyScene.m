@@ -16,14 +16,15 @@
 #import "MapManager.h"
 #import "TimeManager.h"
 #import "TextNode.h"
-#import "FoodStandNode.h"
+#import "FoodStandController.h"
 #import "SMDTextureLoader.h"
 
-@interface MyScene ()<MapDelegate, ButtonSpriteDelegate, TextNodeDelegate, MapNodeDelegate>
+@interface MyScene ()<MapDelegate, ButtonSpriteDelegate, TextNodeDelegate, MapNodeDelegate, FoodStandControllerDelegate>
 
 @property (nonatomic)CFTimeInterval lastUpdate;
 
 @property (nonatomic, strong)InventoryController *inventoryController;
+@property (nonatomic, strong)FoodStandController *foodStandController;
 
 @property (nonatomic, strong)MapNode *mapNode;
 @property (nonatomic, strong)Map *map;
@@ -53,7 +54,6 @@
 
 @property (nonatomic)CGPoint velocity;
 
-@property (nonatomic, strong)FoodStandNode *foodStandNode;
 
 @property (nonatomic, strong)SMDTextureLoader *textureLoader;
 
@@ -138,7 +138,7 @@
     [self.actionButton addChild:self.actionButtonOverlay];
 
 #if TARGET_OS_IPHONE
-    self.inventoryButton = [[ButtonSprite alloc]initWithImageNamed:@"backpack"];
+    self.inventoryButton = [[ButtonSprite alloc] initWithTexture:[self.textureLoader getTextureForName:@"backpack"]];
     self.inventoryButton.delegate = self;
     self.inventoryButton.anchorPoint = CGPointMake(0, 0);
     self.inventoryButton.position  = CGPointMake(10, self.scene.size.height/2);// 100;
@@ -157,9 +157,7 @@
     [self.hudNode addChild:self.timeLabel];
     
 
-    SKTexture *texture = [SKTexture textureWithImageNamed:@"energy"];
-    texture.filteringMode = SKTextureFilteringNearest;
-    self.energyBar = [SKSpriteNode spriteNodeWithTexture:texture];
+    self.energyBar = [SKSpriteNode spriteNodeWithTexture:[self.textureLoader getTextureForName:@"energy"]];
     self.energyBar.anchorPoint = CGPointMake(0, 0);
     self.energyBar.centerRect = CGRectMake(.4, .2, .4, .2);
     self.energyBar.xScale = 10;
@@ -168,9 +166,7 @@
     self.energyBar.position  = CGPointMake(0, self.view.frame.size.height-10-5);// 100;
     [self.hudNode addChild:self.energyBar];
 
-    texture = [SKTexture textureWithImageNamed:@"health_bar"];
-    texture.filteringMode = SKTextureFilteringNearest;
-    self.healthBar = [SKSpriteNode spriteNodeWithTexture:texture];
+    self.healthBar = [SKSpriteNode spriteNodeWithTexture:[self.textureLoader getTextureForName:@"health_bar"]];
     self.healthBar.anchorPoint = CGPointMake(0, 0);
     self.healthBar.centerRect = CGRectMake(.4, .2, .4, .2);
     self.healthBar.xScale = 10;
@@ -561,12 +557,12 @@
     [self.map doneWithProjectile:projectile atPoint:point];
 }
 
--(void)showFoodStand
+-(void)showFoodStand:(FoodStand *)foodStand
 {
     
-    self.foodStandNode = [[FoodStandNode alloc]initWithSize:self.size withPlayer:self.map.player];
-    
-    [self addChild:self.foodStandNode];
+    self.foodStandController = [[FoodStandController alloc]initWithSize:self.size withFoodStand:(FoodStand *)foodStand withPlayer:self.map.player];
+    self.foodStandController.delegate = self;
+    [self addChild:self.foodStandController.foodStandSpriteView];
 
 }
 
@@ -586,5 +582,11 @@
     [textNode runAction:sequence];
 }
 
+#pragma mark - FoodStandControllerDelegate
+
+-(void)doneWithFoodStand:(FoodStand *)foodStand
+{
+    [self.mapNode updateFoodStand:foodStand];
+}
 
 @end
