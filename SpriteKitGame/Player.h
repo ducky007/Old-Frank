@@ -29,6 +29,7 @@ typedef NS_ENUM(NSUInteger, Direction) {
 @property (nonatomic)float energy;
 @property (nonatomic)float maxEnergy;
 @property (nonatomic)CGPoint position;
+@property (nonatomic)NSInteger gold;
 
 
 @property (nonatomic)float frameTimerMax;

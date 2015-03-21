@@ -56,6 +56,7 @@ typedef NS_ENUM(NSUInteger, ActionButtonType) {
 @property (nonatomic, strong)NSMutableArray *dirtyIndexes;
 @property (nonatomic, strong)NSArray *farmPlots;
 @property (nonatomic, strong)FoodStand *foodStand;
+@property (nonatomic)BOOL updateFoodStand;
 
 @property (weak)id <MapDelegate> delegate;
 
@@ -71,5 +72,6 @@ typedef NS_ENUM(NSUInteger, ActionButtonType) {
 
 
 -(TileStack *)tileStackForPlayer:(Player *)player;
+-(void)clean;
 
 @end

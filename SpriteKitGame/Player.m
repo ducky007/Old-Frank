@@ -75,6 +75,7 @@ static inline CGPoint rwMult(CGPoint a, float b) {
     self.maxEnergy = [playerEntity.max_energy floatValue];
     self.equippedItem = [[Item alloc]initWithItemEntity:playerEntity.equppied_item];
     self.equippedTool = [[Item alloc]initWithItemEntity:playerEntity.equipped_tool];
+    self.gold = [playerEntity.gold integerValue];
     
     for (ItemEntity *itemEntity in [playerEntity.inventory allObjects])
     {
@@ -84,7 +85,15 @@ static inline CGPoint rwMult(CGPoint a, float b) {
     }
     
     self.playerEntity = playerEntity;
+}
+
+-(void)setGold:(NSInteger)gold
+{
+    _gold = gold;
     
+    self.playerEntity.gold = @(gold);
+    
+    [[SMDCoreDataHelper sharedHelper]save];
 }
 
 -(NSMutableArray *)inventory
@@ -298,7 +307,9 @@ static inline CGPoint rwMult(CGPoint a, float b) {
     
     self.frameTimerMax = (frameTimerMaxX > frameTimerMaxY) ? frameTimerMaxY : frameTimerMaxX;
     
-    self.moveVelocity = rwMult(self.moveVelocity, 300.0f*dt);
+    float speedModifier = .75;
+    
+    self.moveVelocity = rwMult(self.moveVelocity, 300.0f*dt*speedModifier);
     self.moveVelocity = CGPointMake((int)self.moveVelocity.x, (int)self.moveVelocity.y);
 
     CGRect playerRect = CGRectMake(self.position.x-self.width/2, -self.position.y, self.width, self.height/2);

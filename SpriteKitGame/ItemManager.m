@@ -63,6 +63,9 @@
     item.impassable = storedItem.impassable;
     item.canPickUp = storedItem.canPickUp;
     item.quantity = 1;
+    item.sellPrice = storedItem.sellPrice;
+    item.purchasePrice = storedItem.purchasePrice;
+    item.sellable = storedItem.sellable;
 
     return item;
 }
@@ -129,8 +132,10 @@
                 item.maxStack = [[NSString stringWithUTF8String:(char *)sqlite3_column_text(selectStatement, 2)] integerValue];
                 item.impassable = [[NSString stringWithUTF8String:(char *)sqlite3_column_text(selectStatement, 3)] boolValue];
                 item.canPickUp = [[NSString stringWithUTF8String:(char *)sqlite3_column_text(selectStatement, 4)] boolValue];
-                
-                
+                item.sellPrice = [[NSString stringWithUTF8String:(char *)sqlite3_column_text(selectStatement, 8)] integerValue];
+                item.purchasePrice = [[NSString stringWithUTF8String:(char *)sqlite3_column_text(selectStatement, 9)] integerValue];
+                item.sellable = [[NSString stringWithUTF8String:(char *)sqlite3_column_text(selectStatement, 10)] boolValue];
+
                 item.quantity = 1;
                 if (animated) {
                     NSLog(@"ANIMATED NAME: %@, %@", item.itemName, item);

@@ -101,6 +101,27 @@
     return entityArray;
 }
 
+#pragma mark - counts
+
+-(NSUInteger)countForEntities:(NSString*)entityName includeSubentities:(BOOL)shouldInclude
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    [request setEntity:[NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext]];
+    
+    [request setIncludesSubentities:shouldInclude];
+    
+    NSError *error;
+    NSUInteger count = [self.managedObjectContext countForFetchRequest:request error:&error];
+
+    if(count == NSNotFound || error) {
+        //Handle error
+        NSLog(@"Error while counting entities: %@", error);
+    }
+    
+    return count;
+}
+
 #pragma mark - create/delete
 
 -(id)createNewEntity:(NSString *)entityName
@@ -156,7 +177,6 @@
     
     return _managedObjectModel;
 }
-
 
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {

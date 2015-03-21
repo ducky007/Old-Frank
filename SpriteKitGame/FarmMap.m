@@ -7,6 +7,7 @@
 //
 
 #import "FarmMap.h"
+#import "SMDCoreDataHelper.h"
 
 @implementation FarmMap
 
@@ -49,6 +50,22 @@
     
     [self addRandomObjects];
     [self addRandomSeedBag];
+    
+    NSInteger earnedGold = 0;
+    
+    if (self.foodStand)
+    {
+        
+        for (Item *item in self.foodStand.items.copy)
+        {
+            self.updateFoodStand = YES;
+            earnedGold += (item.sellPrice*item.quantity);
+            [[SMDCoreDataHelper sharedHelper]removeEntity:item.itemEntity andSave:NO];
+            [self.foodStand.items removeObject:item];
+        }
+    }
+    
+    self.player.gold += earnedGold;
 
 }
 

@@ -181,6 +181,11 @@
 
         [self updateTileStackAtIndex:index];
     }
+    
+    if (self.map.updateFoodStand)
+    {
+        [self updateFoodStand:self.map.foodStand];
+    }
 }
 
 -(void)updateTileStackAtIndex:(CGPoint)index

@@ -360,8 +360,7 @@
     
     [self.mapNode update];
     
-    [self.map.dirtyIndexes removeAllObjects];
-
+    [self.map clean];
     
     self.mapNode.position = CGPointMake(-self.mapNode.animatedSpriteNode.position.x+self.scene.size.width/2, -self.mapNode.animatedSpriteNode.position.y+self.scene.size.height/2);
     
@@ -586,7 +585,7 @@
 
 -(void)doneWithFoodStand:(FoodStand *)foodStand
 {
-    [self.mapNode updateFoodStand:foodStand];
+    self.map.updateFoodStand = YES;
 }
 
 @end

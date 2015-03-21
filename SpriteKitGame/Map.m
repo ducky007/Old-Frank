@@ -788,6 +788,12 @@
     }
 }
 
+-(void)clean
+{
+    [self.dirtyIndexes removeAllObjects];
+    self.updateFoodStand = NO;
+}
+
 
 
 @end

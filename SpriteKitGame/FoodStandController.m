@@ -11,6 +11,7 @@
 #import "DragItemButtonSprite.h"
 #import "SMDTextureLoader.h"
 #import "FoodStand.h"
+#import "TextSprite.h"
 
 @interface FoodStandController ()<ItemButtonSpriteDelegate, ButtonSpriteDelegate, DragItemButtonSpriteDelegate>
 
@@ -128,6 +129,10 @@
     self.closeButtonSprite.userInteractionEnabled = YES;
     [self.foodStandSpriteView addChild:self.closeButtonSprite];
     
+    TextSprite *textSprite = [[TextSprite alloc]initWithString:[NSString stringWithFormat:@"Gold $%@", @(self.player.gold)]];
+    textSprite.position = CGPointMake(0, size.height/2-textSprite.calculateAccumulatedFrame.size.height-5);
+    [self.foodStandSpriteView addChild:textSprite];
+
     return self;
 }
 
@@ -236,15 +241,20 @@
 {
     NSLog(@"Done Dragging");
     
-    for (ButtonSprite *button in self.foodStandSlots)
+    if(dragItemButtonSprite.item.sellable)
     {
-        if ([button intersectsNode:dragItemButtonSprite])
+        for (ButtonSprite *button in self.foodStandSlots)
         {
-            NSLog(@"bingo");
-            [self.foodStand addItemToFoodStand:dragItemButtonSprite.item fromPlayer:self.player];
-            break;
+            if ([button intersectsNode:dragItemButtonSprite])
+            {
+                NSLog(@"bingo");
+                [self.foodStand addItemToFoodStand:dragItemButtonSprite.item fromPlayer:self.player];
+                break;
+            }
         }
+
     }
+    
     
     [self updateViews];
 }

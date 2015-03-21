@@ -35,5 +35,9 @@ typedef NS_ENUM(NSUInteger, ItemType) {
 @property (nonatomic)NSInteger quantity;
 @property (nonatomic)BOOL impassable;
 @property (nonatomic)BOOL canPickUp;
+@property (nonatomic)NSInteger sellPrice;
+@property (nonatomic)NSInteger purchasePrice;
+@property (nonatomic)BOOL sellable;
+
 
 @end

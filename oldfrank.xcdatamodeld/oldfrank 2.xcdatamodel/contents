@@ -50,7 +50,10 @@
     </entity>
     <entity name="PlayerEntity" representedClassName="PlayerEntity" syncable="YES">
         <attribute name="energy" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="gold" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="health" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="max_energy" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="max_health" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <relationship name="equipped_tool" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="player_tool" inverseEntity="ItemEntity" syncable="YES"/>
         <relationship name="equppied_item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="player_item" inverseEntity="ItemEntity" syncable="YES"/>
         <relationship name="inventory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="player_inventory" inverseEntity="ItemEntity" syncable="YES"/>
@@ -73,7 +76,7 @@
         <element name="MapEntity" positionX="-1676" positionY="27" width="128" height="208"/>
         <element name="MapTriggerEntity" positionX="-1503" positionY="242" width="128" height="133"/>
         <element name="PlantEntity" positionX="-1325" positionY="230" width="128" height="103"/>
-        <element name="PlayerEntity" positionX="-1503" positionY="-100" width="128" height="118"/>
+        <element name="PlayerEntity" positionX="-1503" positionY="-108" width="128" height="163"/>
         <element name="TileStackEntity" positionX="-1503" positionY="23" width="128" height="193"/>
     </elements>
 </model>

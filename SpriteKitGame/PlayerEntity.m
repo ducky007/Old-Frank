@@ -1,8 +1,8 @@
 //
 //  PlayerEntity.m
-//  SpriteKitGame
+//  Old Frank
 //
-//  Created by Skyler Lauren on 1/25/15.
+//  Created by Skyler Lauren on 3/20/15.
 //  Copyright (c) 2015 Sky Mist Development. All rights reserved.
 //
 
@@ -14,6 +14,9 @@
 
 @dynamic energy;
 @dynamic max_energy;
+@dynamic gold;
+@dynamic health;
+@dynamic max_health;
 @dynamic equipped_tool;
 @dynamic equppied_item;
 @dynamic inventory;

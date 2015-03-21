@@ -16,7 +16,6 @@
 		B6437E451A5981070000E8E7 /* MapTile.m in Sources */ = {isa = PBXBuildFile; fileRef = B6437E441A5981070000E8E7 /* MapTile.m */; };
 		B64603ED1A51845000EC66DF /* farm.json in Resources */ = {isa = PBXBuildFile; fileRef = B64603EC1A51845000EC66DF /* farm.json */; };
 		B64603F01A5184BF00EC66DF /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = B64603EE1A5184BF00EC66DF /* background.png */; };
-		B64975991A75E401003D5C8E /* PlayerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975981A75E401003D5C8E /* PlayerEntity.m */; };
 		B649759F1A75E402003D5C8E /* PlantEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B649759E1A75E402003D5C8E /* PlantEntity.m */; };
 		B64975A21A75E402003D5C8E /* TileStackEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975A11A75E402003D5C8E /* TileStackEntity.m */; };
 		B64975B11A75E752003D5C8E /* MapTriggerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975B01A75E752003D5C8E /* MapTriggerEntity.m */; };
@@ -54,7 +53,6 @@
 		B690F64F1A98226C00E0D300 /* MapTriggerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975B01A75E752003D5C8E /* MapTriggerEntity.m */; };
 		B690F6521A98227600E0D300 /* TileStackEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975A11A75E402003D5C8E /* TileStackEntity.m */; };
 		B690F6531A98227900E0D300 /* PlantEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B649759E1A75E402003D5C8E /* PlantEntity.m */; };
-		B690F6541A98227C00E0D300 /* PlayerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B64975981A75E401003D5C8E /* PlayerEntity.m */; };
 		B690F6551A98228200E0D300 /* SMDCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D85E9D1A673EF000E73066 /* SMDCoreDataHelper.m */; };
 		B690F6561A98228900E0D300 /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D85ED61A68D43800E73066 /* Map.m */; };
 		B690F6571A98228C00E0D300 /* MapTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D85E9A1A6609F800E73066 /* MapTrigger.m */; };
@@ -107,6 +105,8 @@
 		B6C7EC631ABA6FB2001290D4 /* FoodStandEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7EC611ABA6FB2001290D4 /* FoodStandEntity.m */; };
 		B6C7EC661ABA6FB3001290D4 /* MapEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7EC651ABA6FB3001290D4 /* MapEntity.m */; };
 		B6C7EC671ABA6FB3001290D4 /* MapEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7EC651ABA6FB3001290D4 /* MapEntity.m */; };
+		B6C7ECE91ABD110F001290D4 /* PlayerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7ECE81ABD110F001290D4 /* PlayerEntity.m */; };
+		B6C7ECEA1ABD110F001290D4 /* PlayerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7ECE81ABD110F001290D4 /* PlayerEntity.m */; };
 		B6C88E8C1A6550020003F116 /* farm.tmx in Resources */ = {isa = PBXBuildFile; fileRef = B6C88E881A6550020003F116 /* farm.tmx */; };
 		B6C88E8D1A6550020003F116 /* house.json in Resources */ = {isa = PBXBuildFile; fileRef = B6C88E891A6550020003F116 /* house.json */; };
 		B6C88E8E1A6550020003F116 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C88E8A1A6550020003F116 /* house.png */; };
@@ -146,6 +146,8 @@
 		B6DDE2E31A89B6FB000D3BE6 /* TextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DDE2E21A89B6FB000D3BE6 /* TextNode.m */; };
 		B6EDCB571AA1FA3F00964612 /* DialogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B64D71F01A9DF7E5004C2F79 /* DialogManager.m */; };
 		B6EDCB581AA1FA4E00964612 /* Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = B64D71F31A9DF9AF004C2F79 /* Dialog.m */; };
+		B6F44D761ABDC5AA00AB5B94 /* TextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F44D751ABDC5AA00AB5B94 /* TextSprite.m */; };
+		B6F44D771ABDC5AA00AB5B94 /* TextSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F44D751ABDC5AA00AB5B94 /* TextSprite.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,8 +164,6 @@
 		B6437E441A5981070000E8E7 /* MapTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTile.m; sourceTree = "<group>"; };
 		B64603EC1A51845000EC66DF /* farm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = farm.json; path = Tiled/farm.json; sourceTree = "<group>"; };
 		B64603EE1A5184BF00EC66DF /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Tiled/background.png; sourceTree = "<group>"; };
-		B64975971A75E401003D5C8E /* PlayerEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerEntity.h; sourceTree = "<group>"; };
-		B64975981A75E401003D5C8E /* PlayerEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerEntity.m; sourceTree = "<group>"; };
 		B649759D1A75E402003D5C8E /* PlantEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlantEntity.h; sourceTree = "<group>"; };
 		B649759E1A75E402003D5C8E /* PlantEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlantEntity.m; sourceTree = "<group>"; };
 		B64975A01A75E402003D5C8E /* TileStackEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileStackEntity.h; sourceTree = "<group>"; };
@@ -187,8 +187,8 @@
 		B64C78A81914781C00A2D065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		B64C78AA1914781C00A2D065 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		B64C78AB1914781C00A2D065 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		B64C78AD1914781C00A2D065 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
-		B64C78AE1914781C00A2D065 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		B64C78AD1914781C00A2D065 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MyScene.h; path = SpriteKitGame/MyScene.h; sourceTree = "<group>"; };
+		B64C78AE1914781C00A2D065 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MyScene.m; path = SpriteKitGame/MyScene.m; sourceTree = "<group>"; };
 		B64C78B21914781C00A2D065 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B64C78B91914781C00A2D065 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B64C78D11914787500A2D065 /* AnimatedSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedSpriteNode.h; sourceTree = "<group>"; };
@@ -238,6 +238,8 @@
 		B6C7EC611ABA6FB2001290D4 /* FoodStandEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodStandEntity.m; sourceTree = "<group>"; };
 		B6C7EC641ABA6FB3001290D4 /* MapEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapEntity.h; sourceTree = "<group>"; };
 		B6C7EC651ABA6FB3001290D4 /* MapEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapEntity.m; sourceTree = "<group>"; };
+		B6C7ECE71ABD110F001290D4 /* PlayerEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerEntity.h; sourceTree = "<group>"; };
+		B6C7ECE81ABD110F001290D4 /* PlayerEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerEntity.m; sourceTree = "<group>"; };
 		B6C88E881A6550020003F116 /* farm.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = farm.tmx; path = Tiled/farm.tmx; sourceTree = "<group>"; };
 		B6C88E891A6550020003F116 /* house.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = house.json; path = Tiled/house.json; sourceTree = "<group>"; };
 		B6C88E8A1A6550020003F116 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = house.png; path = Tiled/house.png; sourceTree = "<group>"; };
@@ -286,6 +288,8 @@
 		B6DDE2DF1A89B63B000D3BE6 /* text.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = text.atlas; sourceTree = "<group>"; };
 		B6DDE2E11A89B6FB000D3BE6 /* TextNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextNode.h; sourceTree = "<group>"; };
 		B6DDE2E21A89B6FB000D3BE6 /* TextNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextNode.m; sourceTree = "<group>"; };
+		B6F44D741ABDC5AA00AB5B94 /* TextSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextSprite.h; sourceTree = "<group>"; };
+		B6F44D751ABDC5AA00AB5B94 /* TextSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextSprite.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +345,8 @@
 			isa = PBXGroup;
 			children = (
 				B6825C4C193A069D000449FA /* README.md */,
+				B64C78AD1914781C00A2D065 /* MyScene.h */,
+				B64C78AE1914781C00A2D065 /* MyScene.m */,
 				B690F6C71A98341E00E0D300 /* Shared */,
 				B64C78981914781C00A2D065 /* IOS */,
 				B690F6261A98220C00E0D300 /* Mac */,
@@ -445,8 +451,6 @@
 		B6825C4F193A1FD5000449FA /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				B64C78AD1914781C00A2D065 /* MyScene.h */,
-				B64C78AE1914781C00A2D065 /* MyScene.m */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -456,6 +460,8 @@
 			children = (
 				B6DDE2E11A89B6FB000D3BE6 /* TextNode.h */,
 				B6DDE2E21A89B6FB000D3BE6 /* TextNode.m */,
+				B6F44D741ABDC5AA00AB5B94 /* TextSprite.h */,
+				B6F44D751ABDC5AA00AB5B94 /* TextSprite.m */,
 				B6825C4E193A1FC4000449FA /* Maps */,
 				B64A2D091A7916A4006C2406 /* ButtonSprite.h */,
 				B64A2D0A1A7916A4006C2406 /* ButtonSprite.m */,
@@ -562,6 +568,8 @@
 		B6D85EA51A67E8FD00E73066 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				B6C7ECE71ABD110F001290D4 /* PlayerEntity.h */,
+				B6C7ECE81ABD110F001290D4 /* PlayerEntity.m */,
 				B6C7EC641ABA6FB3001290D4 /* MapEntity.h */,
 				B6C7EC651ABA6FB3001290D4 /* MapEntity.m */,
 				B6C7EC601ABA6FB2001290D4 /* FoodStandEntity.h */,
@@ -572,8 +580,6 @@
 				B64975A11A75E402003D5C8E /* TileStackEntity.m */,
 				B649759D1A75E402003D5C8E /* PlantEntity.h */,
 				B649759E1A75E402003D5C8E /* PlantEntity.m */,
-				B64975971A75E401003D5C8E /* PlayerEntity.h */,
-				B64975981A75E401003D5C8E /* PlayerEntity.m */,
 				B6D85EA21A67416B00E73066 /* oldfrank.xcdatamodeld */,
 				B6CF460E1AB4A0B00096EB01 /* ItemEntity.h */,
 				B6CF460F1AB4A0B10096EB01 /* ItemEntity.m */,
@@ -799,14 +805,15 @@
 				B64D71F41A9DF9AF004C2F79 /* Dialog.m in Sources */,
 				B6CF46061AB487DC0096EB01 /* SMDTextureLoader.m in Sources */,
 				B64C78D31914787500A2D065 /* AnimatedSpriteNode.m in Sources */,
+				B6C7ECE91ABD110F001290D4 /* PlayerEntity.m in Sources */,
 				B67FB82D1A538C69000B488F /* PlayerAnimatedSpriteNode.m in Sources */,
 				B6D85EA41A67416B00E73066 /* oldfrank.xcdatamodeld in Sources */,
-				B64975991A75E401003D5C8E /* PlayerEntity.m in Sources */,
 				B624776E1A7087A8003DC066 /* TileStackNode.m in Sources */,
 				B649759F1A75E402003D5C8E /* PlantEntity.m in Sources */,
 				B64C789F1914781C00A2D065 /* main.m in Sources */,
 				B6CF461A1AB4CEF30096EB01 /* FarmMap.m in Sources */,
 				B64A2D0B1A7916A4006C2406 /* ButtonSprite.m in Sources */,
+				B6F44D761ABDC5AA00AB5B94 /* TextSprite.m in Sources */,
 				B6CF46101AB4A0B10096EB01 /* ItemEntity.m in Sources */,
 				B6DAA5191A5E10EC00E0DB61 /* Item.m in Sources */,
 				B64975B11A75E752003D5C8E /* MapTriggerEntity.m in Sources */,
@@ -833,7 +840,6 @@
 				B690F6821A98233D00E0D300 /* InventoryController.m in Sources */,
 				B6EDCB571AA1FA3F00964612 /* DialogManager.m in Sources */,
 				B690F6581A98228F00E0D300 /* HouseMap.m in Sources */,
-				B690F6541A98227C00E0D300 /* PlayerEntity.m in Sources */,
 				B6CF46111AB4A0B10096EB01 /* ItemEntity.m in Sources */,
 				B690F67B1A98230500E0D300 /* MyScene.m in Sources */,
 				B690F65C1A98229D00E0D300 /* TileStack.m in Sources */,
@@ -848,8 +854,10 @@
 				B690F67E1A98232D00E0D300 /* AnalogSpriteNode.m in Sources */,
 				B690F6761A9822E800E0D300 /* MapNode.m in Sources */,
 				B690F6731A9822E800E0D300 /* MapTile.m in Sources */,
+				B6C7ECEA1ABD110F001290D4 /* PlayerEntity.m in Sources */,
 				B690F6741A9822E800E0D300 /* ItemSprite.m in Sources */,
 				B690F65F1A9822A700E0D300 /* PlantManager.m in Sources */,
+				B6F44D771ABDC5AA00AB5B94 /* TextSprite.m in Sources */,
 				B690F6551A98228200E0D300 /* SMDCoreDataHelper.m in Sources */,
 				B6CF46071AB488480096EB01 /* SMDTextureLoader.m in Sources */,
 				B690F67F1A98232D00E0D300 /* ItemButtonSprite.m in Sources */,

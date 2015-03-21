@@ -10,6 +10,7 @@
 #import "ButtonSprite.h"
 #import "ItemButtonSprite.h"
 #import "SMDTextureLoader.h"
+#import "TextSprite.h"
 
 @interface InventoryController ()<ButtonSpriteDelegate, ItemButtonSpriteDelegate>
 
@@ -77,6 +78,11 @@
     self.inventoryItemContainer.position = CGPointMake(32, self.inventoryItemContainer.size.height + diff/2);
     [self.inventorySpriteView addChild:self.inventoryItemContainer];
     [self updateViews];
+    
+    TextSprite *textSprite = [[TextSprite alloc]initWithString:[NSString stringWithFormat:@"Gold $%@", @(self.player.gold)]];
+    textSprite.position = CGPointMake(size.width/2, size.height-textSprite.calculateAccumulatedFrame.size.height-5);
+    [self.inventorySpriteView addChild:textSprite];
+    
     return self;
 }
 
