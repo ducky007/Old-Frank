@@ -19,7 +19,7 @@
     SKView * skView = (SKView *)self.view;
    
     skView.ignoresSiblingOrder = YES;
-//    skView.showsFPS = YES;
+    skView.showsFPS = YES;
     
     // Create and configure the scene.
     //SKScene * scene = [MyScene sceneWithSize:CGSizeMake(self.view.bounds.size.height, self.view.bounds.size.width)];

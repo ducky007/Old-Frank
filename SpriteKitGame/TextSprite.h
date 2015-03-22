@@ -11,5 +11,6 @@
 @interface TextSprite : SKSpriteNode
 
 -(id)initWithString:(NSString *)string;
+@property (nonatomic, strong)NSString *text;
 
 @end

@@ -18,6 +18,7 @@
 #import "TextNode.h"
 #import "FoodStandController.h"
 #import "SMDTextureLoader.h"
+#import "TextSprite.h"
 
 @interface MyScene ()<MapDelegate, ButtonSpriteDelegate, TextNodeDelegate, MapNodeDelegate, FoodStandControllerDelegate>
 
@@ -46,7 +47,7 @@
 
 @property (nonatomic, strong)SKSpriteNode *nightHud;
 
-@property (nonatomic, strong)SKLabelNode *timeLabel;
+@property (nonatomic, strong)TextSprite *timeTextSprite;
 
 @property (nonatomic)BOOL transitioning;
 
@@ -148,13 +149,16 @@
     [self.hudNode addChild:self.inventoryButton];
 #endif
 
+    self.timeTextSprite = [[TextSprite alloc]initWithString:[[TimeManager sharedManager] timeStringValue]];
+    self.timeTextSprite.position = CGPointMake(self.size.width/2, self.size.height-self.timeTextSprite.size.height-10);
+    [self.hudNode addChild:self.timeTextSprite];
     
-    self.timeLabel = [SKLabelNode labelNodeWithText:@"time"];
-    self.timeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
-    self.timeLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeTop;
-    self.timeLabel.fontSize = 14;
-    self.timeLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height-5);
-    [self.hudNode addChild:self.timeLabel];
+//    self.timeLabel = [SKLabelNode labelNodeWithText:@"time"];
+//    self.timeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter;
+//    self.timeLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeTop;
+//    self.timeLabel.fontSize = 14;
+//    self.timeLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height-5);
+//    [self.hudNode addChild:self.timeLabel];
     
 
     self.energyBar = [SKSpriteNode spriteNodeWithTexture:[self.textureLoader getTextureForName:@"energy"]];
@@ -349,8 +353,8 @@
     
     float timeBetweenUpdates = currentTime-self.lastUpdate;
     
-    self.timeLabel.text = [[TimeManager sharedManager]timeStringValue];
-        
+    self.timeTextSprite.text = [[TimeManager sharedManager]timeStringValue];
+    
     if (!self.transitioning)
     {
         self.map.player.moveVelocity = self.velocity;

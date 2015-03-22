@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong)SMDTextureLoader *textureLoader;
 @property (nonatomic, strong)NSDictionary *imageDictionary;
+@property (nonatomic, strong)SKNode *positionNode;
 
 @end
 
@@ -90,16 +91,34 @@
                               @"6" : @"6",
                               @"7" : @"7",
                               @"8" : @"8",
-                              @"9" : @"9"
+                              @"9" : @"9",
+                              @":" : @"colon"
                               };
     
-    SKNode *positionNode = [[SKNode alloc]init];
     
-    NSInteger xPositionLetter = 0;
+       self.zPosition = 10;
+    self.positionNode = [[SKNode alloc]init];
+    self.positionNode.zPosition = 1;
+    //centering after adding all letters
+    [self addChild:self.positionNode];
+    
+    self.text = string;
+    
+    return self;
+}
 
-    for (NSInteger i = 0; i < string.length; i++)
+-(void)loadText
+{
+    NSInteger xPositionLetter = 0;
+    
+    for (SKNode *node in self.positionNode.children)
     {
-        NSString *tmp_str = [string substringWithRange:NSMakeRange(i, 1)];
+        [node removeFromParent];
+    }
+    
+    for (NSInteger i = 0; i < self.text.length; i++)
+    {
+        NSString *tmp_str = [self.text substringWithRange:NSMakeRange(i, 1)];
         NSString *imageName = self.imageDictionary[tmp_str];
         
         if (!imageName)
@@ -110,20 +129,19 @@
         SKSpriteNode *letter = [SKSpriteNode spriteNodeWithTexture:[self.textureLoader getTextureForName:imageName]];
         letter.anchorPoint = CGPointMake(0, .5);
         letter.position = CGPointMake(xPositionLetter, 0);
-        [positionNode addChild:letter];
+        [self.positionNode addChild:letter];
         
         xPositionLetter += letter.size.width;
-        
-        NSLog(@"Space: %@ letter:%@", @(letter.size.width), tmp_str);
-
+                
     }
-    self.zPosition = 10;
-    positionNode.zPosition = 1;
-    //centering after adding all letters
-    [self addChild:positionNode];
-    positionNode.position = CGPointMake(-xPositionLetter/2, 0);
     
-    return self;
+    self.positionNode.position = CGPointMake(-xPositionLetter/2, 0);
+}
+
+-(void)setText:(NSString *)text
+{
+    _text = text;
+    [self loadText];
 }
 
 @end

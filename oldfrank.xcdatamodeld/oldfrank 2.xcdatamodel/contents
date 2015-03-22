@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14C1510" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14C1514" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="FoodStandEntity" representedClassName="FoodStandEntity" syncable="YES">
         <attribute name="item_1_index_x" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="item_1_index_y" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -70,6 +70,11 @@
         <relationship name="object_item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="tile_stack_object" inverseEntity="ItemEntity" syncable="YES"/>
         <relationship name="plant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlantEntity" inverseName="tile_stack" inverseEntity="PlantEntity" syncable="YES"/>
     </entity>
+    <entity name="TimeEntity" representedClassName="TimeEntity" syncable="YES">
+        <attribute name="current_time" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="day" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="season" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
     <elements>
         <element name="FoodStandEntity" positionX="-1503" positionY="-279" width="128" height="163"/>
         <element name="ItemEntity" positionX="-1262" positionY="36" width="128" height="178"/>
@@ -78,5 +83,6 @@
         <element name="PlantEntity" positionX="-1325" positionY="230" width="128" height="103"/>
         <element name="PlayerEntity" positionX="-1503" positionY="-108" width="128" height="163"/>
         <element name="TileStackEntity" positionX="-1503" positionY="23" width="128" height="193"/>
+        <element name="TimeEntity" positionX="-1467" positionY="-126" width="128" height="88"/>
     </elements>
 </model>

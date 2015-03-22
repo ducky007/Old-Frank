@@ -127,6 +127,8 @@
 		B6D6881A1A80665300FD3184 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D688191A80665300FD3184 /* View.xib */; };
 		B6D6885A1A82DFA500FD3184 /* ItemButtonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D688591A82DFA500FD3184 /* ItemButtonSprite.m */; };
 		B6D6885E1A846F8100FD3184 /* items.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B6D6885D1A846F8100FD3184 /* items.atlas */; };
+		B6D772371ABE706F00A0EF8C /* TimeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D772361ABE706F00A0EF8C /* TimeEntity.m */; };
+		B6D772381ABE706F00A0EF8C /* TimeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D772361ABE706F00A0EF8C /* TimeEntity.m */; };
 		B6D85E9B1A6609F800E73066 /* MapTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D85E9A1A6609F800E73066 /* MapTrigger.m */; };
 		B6D85E9E1A673EF000E73066 /* SMDCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D85E9D1A673EF000E73066 /* SMDCoreDataHelper.m */; };
 		B6D85EA41A67416B00E73066 /* oldfrank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6D85EA21A67416B00E73066 /* oldfrank.xcdatamodeld */; };
@@ -262,6 +264,8 @@
 		B6D688581A82DFA500FD3184 /* ItemButtonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemButtonSprite.h; sourceTree = "<group>"; };
 		B6D688591A82DFA500FD3184 /* ItemButtonSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemButtonSprite.m; sourceTree = "<group>"; };
 		B6D6885D1A846F8100FD3184 /* items.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = items.atlas; sourceTree = "<group>"; };
+		B6D772351ABE706F00A0EF8C /* TimeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeEntity.h; sourceTree = "<group>"; };
+		B6D772361ABE706F00A0EF8C /* TimeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeEntity.m; sourceTree = "<group>"; };
 		B6D85E991A6609F800E73066 /* MapTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapTrigger.h; sourceTree = "<group>"; };
 		B6D85E9A1A6609F800E73066 /* MapTrigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTrigger.m; sourceTree = "<group>"; };
 		B6D85E9C1A673EF000E73066 /* SMDCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMDCoreDataHelper.h; sourceTree = "<group>"; };
@@ -568,6 +572,8 @@
 		B6D85EA51A67E8FD00E73066 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				B6D772351ABE706F00A0EF8C /* TimeEntity.h */,
+				B6D772361ABE706F00A0EF8C /* TimeEntity.m */,
 				B6C7ECE71ABD110F001290D4 /* PlayerEntity.h */,
 				B6C7ECE81ABD110F001290D4 /* PlayerEntity.m */,
 				B6C7EC641ABA6FB3001290D4 /* MapEntity.h */,
@@ -811,6 +817,7 @@
 				B624776E1A7087A8003DC066 /* TileStackNode.m in Sources */,
 				B649759F1A75E402003D5C8E /* PlantEntity.m in Sources */,
 				B64C789F1914781C00A2D065 /* main.m in Sources */,
+				B6D772371ABE706F00A0EF8C /* TimeEntity.m in Sources */,
 				B6CF461A1AB4CEF30096EB01 /* FarmMap.m in Sources */,
 				B64A2D0B1A7916A4006C2406 /* ButtonSprite.m in Sources */,
 				B6F44D761ABDC5AA00AB5B94 /* TextSprite.m in Sources */,
@@ -852,6 +859,7 @@
 				B690F64F1A98226C00E0D300 /* MapTriggerEntity.m in Sources */,
 				B6EDCB581AA1FA4E00964612 /* Dialog.m in Sources */,
 				B690F67E1A98232D00E0D300 /* AnalogSpriteNode.m in Sources */,
+				B6D772381ABE706F00A0EF8C /* TimeEntity.m in Sources */,
 				B690F6761A9822E800E0D300 /* MapNode.m in Sources */,
 				B690F6731A9822E800E0D300 /* MapTile.m in Sources */,
 				B6C7ECEA1ABD110F001290D4 /* PlayerEntity.m in Sources */,
